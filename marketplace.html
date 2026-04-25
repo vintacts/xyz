@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Vintacts marketplace | Arsip web</title>
-    <meta name="description" content="Vintacts - Marketplace template website premium siap pakai. Koleksi template portfolio, ecommerce, company profile, landing page dengan desain modern dan kode bersih.">
+    <title>Vintacts — Premium Template Marketplace</title>
+    <meta name="description" content="Vintacts - Marketplace template website premium siap pakai.">
     
     <!-- FAVICON -->
-    <link rel="icon" type="image/x-icon" href="folder/Ikon.png">
-    <link rel="apple-touch-icon" href="folder/Ikon.png">
+    <link rel="icon" type="image/x-icon" href="Folder/Ikon.png">
+    <link rel="apple-touch-icon" href="Folder/Ikon.png">
     
     <!-- FONTS & ASSETS -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
@@ -18,12 +18,12 @@
         /* ============================================================
            TABLE OF CONTENTS:
            1. RESET & BASE
-           2. SIDEBAR
+           2. SIDEBAR COMPONENT
            3. MAIN CONTENT & WELCOME
            4. PRODUCT GRID
-           5. DETAIL PAGE
+           5. DETAIL PAGE (with View Button)
            6. CHECKOUT PAGE
-           7. RESPONSIVE
+           7. RESPONSIVE STYLES
         ============================================================ */
 
         /* ========== 1. RESET & BASE ========== */
@@ -47,7 +47,7 @@
             pointer-events: none;
         }
 
-        /* ========== 2. SIDEBAR ========== */
+        /* ========== 2. SIDEBAR COMPONENT ========== */
         .app-wrapper {
             display: flex;
             min-height: 100vh;
@@ -300,7 +300,6 @@
             margin: 8px 0;
             line-height: 1.4;
             display: -webkit-box;
-            -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
@@ -344,7 +343,7 @@
             color: white;
         }
 
-        /* ========== 5. DETAIL PAGE ========== */
+        /* ========== 5. DETAIL PAGE (with View Button) ========== */
         .detail-page, .checkout-page {
             animation: fadeIn 0.3s ease;
         }
@@ -374,10 +373,43 @@
             gap: 40px;
         }
 
+        .gallery-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
         .detail-img-main {
             width: 100%;
             border-radius: 20px;
             border: 1px solid rgba(168, 85, 247, 0.2);
+            display: block;
+        }
+
+        .view-btn {
+            position: absolute;
+            bottom: 16px;
+            right: 16px;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(168, 85, 247, 0.5);
+            border-radius: 40px;
+            padding: 8px 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            z-index: 10;
+            text-decoration: none;
+        }
+
+        .view-btn:hover {
+            background: linear-gradient(135deg, #a855f7, #c084fc);
+            border-color: transparent;
+            transform: scale(1.02);
         }
 
         .detail-thumbs {
@@ -623,10 +655,8 @@
             background: #111118;
             border: 1px solid rgba(168, 85, 247, 0.2);
             color: white;
-            font-family: 'Inter', sans-serif;
             font-size: 0.85rem;
             outline: none;
-            transition: 0.2s;
         }
 
         .form-group input:focus {
@@ -712,10 +742,6 @@
             color: #c084fc;
             margin-bottom: 12px;
             display: block;
-        }
-
-        .qris-placeholder p {
-            font-size: 0.7rem;
         }
 
         .qris-note {
@@ -848,37 +874,38 @@
     <script>
         (function() {
             // ============================================
-            // KONFIGURASI QRIS - GANTI DENGAN URL FOTO QRIS ANDA
+            // KONFIGURASI
             // ============================================
-            const QRIS_IMAGE_URL = "";  // <-- ISI DENGAN URL FOTO QRIS ANDA
-
+            const QRIS_IMAGE_URL = "";  // GANTI DENGAN URL FOTO QRIS ANDA
+            const WHATSAPP_NUMBER = "6289684219904";
+            
             // ============================================
-            // DATA PRODUK (16 PRODUK, 4 KATEGORI)
+            // DATA PRODUK (16 PRODUK, 4 KATEGORI, @ 3 GAMBAR)
             // ============================================
             const products = [
                 // Portfolio (4 produk)
-                { id: 1, name: "Aether Studio", category: "Portfolio", price: 449000, desc: "Template portfolio modern dengan animasi halus.", longDesc: "Aether Studio adalah template portfolio premium untuk kreator digital yang ingin menampilkan karya terbaiknya dengan gaya modern dan animasi yang memukau.", img: "https://images.unsplash.com/photo-1545235617-7a424c1a60cc?w=600&h=400&fit=crop", images: ["https://images.unsplash.com/photo-1545235617-7a424c1a60cc?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1517299321609-52687d1bc55a?w=600&h=400&fit=crop"], tech: ["React 18", "Tailwind CSS"], features: ["Animasi scroll", "Dark mode", "Responsive"], testimonial: { name: "Andi Wijaya", role: "Creative Director", text: "Template ini sangat membantu portfolio saya!", avatar: "AW" } },
-                { id: 2, name: "ArtSpace", category: "Portfolio", price: 399000, desc: "Tampilan grid artistik untuk fotografer.", longDesc: "ArtSpace dirancang khusus untuk menonjolkan karya visual fotografer dan seniman dengan tampilan grid yang artistik.", img: "https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?w=600&h=400&fit=crop", images: ["https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1517299321609-52687d1bc55a?w=600&h=400&fit=crop"], tech: ["HTML5", "CSS3", "GSAP"], features: ["Grid dinamis", "Lightbox gallery"], testimonial: { name: "Sarah Melati", role: "Photographer", text: "Portofolio saya jadi lebih profesional!", avatar: "SM" } },
-                { id: 3, name: "DevPort", category: "Portfolio", price: 499000, desc: "Portfolio developer dengan showcase project.", longDesc: "DevPort memudahkan developer dalam menampilkan project-project terbaik mereka dengan tampilan yang bersih dan profesional.", img: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=600&h=400&fit=crop", images: ["https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1517299321609-52687d1bc55a?w=600&h=400&fit=crop"], tech: ["Next.js", "Tailwind"], features: ["Blog terintegrasi", "Project showcase"], testimonial: { name: "Rizal Firmansyah", role: "Web Developer", text: "Membantu saya mendapatkan klien baru!", avatar: "RF" } },
-                { id: 4, name: "AgencyPro", category: "Portfolio", price: 599000, desc: "Template agensi kreatif modern.", longDesc: "AgencyPro memiliki halaman tim, layanan, dan portfolio client yang lengkap untuk agensi kreatif modern.", img: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&h=400&fit=crop", images: ["https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1517299321609-52687d1bc55a?w=600&h=400&fit=crop"], tech: ["React", "Bootstrap"], features: ["Team section", "Service page"], testimonial: { name: "Lina Anggraini", role: "Agency Owner", text: "Website agensi saya jadi lebih profesional!", avatar: "LA" } },
+                { id: 1, name: "Aether Studio", category: "Portfolio", price: 449000, desc: "Template portfolio modern dengan animasi halus.", longDesc: "Aether Studio adalah template portfolio premium untuk kreator digital.", img: "https://images.unsplash.com/photo-1545235617-7a424c1a60cc?w=600&h=400&fit=crop", images: ["https://images.unsplash.com/photo-1545235617-7a424c1a60cc?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1517299321609-52687d1bc55a?w=600&h=400&fit=crop"], tech: ["React 18", "Tailwind CSS"], features: ["Animasi scroll", "Dark mode", "Responsive"], testimonial: { name: "Andi Wijaya", role: "Creative Director", text: "Template ini sangat membantu portfolio saya!", avatar: "AW" }, demoLink: "https://vintacts.github.io/demo/aether-studio" },
+                { id: 2, name: "ArtSpace", category: "Portfolio", price: 399000, desc: "Tampilan grid artistik untuk fotografer.", longDesc: "ArtSpace dirancang untuk menonjolkan karya visual.", img: "https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?w=600&h=400&fit=crop", images: ["https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1517299321609-52687d1bc55a?w=600&h=400&fit=crop"], tech: ["HTML5", "CSS3", "GSAP"], features: ["Grid dinamis", "Lightbox gallery"], testimonial: { name: "Sarah Melati", role: "Photographer", text: "Portofolio saya jadi lebih profesional!", avatar: "SM" }, demoLink: "https://vintacts.github.io/demo/artspace" },
+                { id: 3, name: "DevPort", category: "Portfolio", price: 499000, desc: "Portfolio developer dengan showcase project.", longDesc: "DevPort memudahkan developer menampilkan project.", img: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=600&h=400&fit=crop", images: ["https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1517299321609-52687d1bc55a?w=600&h=400&fit=crop"], tech: ["Next.js", "Tailwind"], features: ["Blog terintegrasi", "Project showcase"], testimonial: { name: "Rizal Firmansyah", role: "Web Developer", text: "Membantu saya mendapatkan klien baru!", avatar: "RF" }, demoLink: "https://vintacts.github.io/demo/devport" },
+                { id: 4, name: "AgencyPro", category: "Portfolio", price: 599000, desc: "Template agensi kreatif modern.", longDesc: "AgencyPro memiliki halaman tim, layanan, dan portfolio client.", img: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&h=400&fit=crop", images: ["https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1517299321609-52687d1bc55a?w=600&h=400&fit=crop"], tech: ["React", "Bootstrap"], features: ["Team section", "Service page"], testimonial: { name: "Lina Anggraini", role: "Agency Owner", text: "Website agensi saya jadi lebih profesional!", avatar: "LA" }, demoLink: "https://vintacts.github.io/demo/agencypro" },
                 
                 // Ecommerce (4 produk)
-                { id: 5, name: "Kommerce", category: "Ecommerce", price: 589000, desc: "Toko online lengkap dengan fitur modern.", longDesc: "Kommerce adalah solusi ecommerce lengkap dengan berbagai fitur modern untuk memulai bisnis online Anda.", img: "https://images.unsplash.com/photo-1556742049-0cfed2f7a0a8?w=600&h=400&fit=crop", images: ["https://images.unsplash.com/photo-1556742049-0cfed2f7a0a8?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1556742031-c6961e8560b0?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=600&h=400&fit=crop"], tech: ["Next.js 14", "Stripe"], features: ["Multi-vendor", "Wishlist"], testimonial: { name: "Dian Permata", role: "Owner", text: "Penjualan meningkat drastis!", avatar: "DP" } },
-                { id: 6, name: "FashionShop", category: "Ecommerce", price: 529000, desc: "Template toko fashion stylish.", longDesc: "FashionShop hadir dengan desain elegan yang cocok untuk brand fashion dan pakaian.", img: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop", images: ["https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1556742031-c6961e8560b0?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=600&h=400&fit=crop"], tech: ["Vue.js", "SCSS"], features: ["Quick view", "Product filter"], testimonial: { name: "Nina Zulianti", role: "Brand Owner", text: "Penjualan online meningkat 50%!", avatar: "NZ" } },
-                { id: 7, name: "ElectroMart", category: "Ecommerce", price: 649000, desc: "Toko elektronik layout modern.", longDesc: "ElectroMart dirancang khusus untuk produk elektronik dengan layout modern dan fitur perbandingan produk.", img: "https://images.unsplash.com/photo-1550009158-9ebf69173e03?w=600&h=400&fit=crop", images: ["https://images.unsplash.com/photo-1550009158-9ebf69173e03?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1556742031-c6961e8560b0?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=600&h=400&fit=crop"], tech: ["React", "Node.js"], features: ["Product compare", "Reviews"], testimonial: { name: "Bambang S", role: "Store Owner", text: "Sangat membantu bisnis saya!", avatar: "BS" } },
-                { id: 8, name: "BookStore", category: "Ecommerce", price: 449000, desc: "Toko buku online minimalis.", longDesc: "BookStore dengan fitur pencarian buku yang memudahkan pelanggan menemukan buku favorit mereka.", img: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=600&h=400&fit=crop", images: ["https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1556742031-c6961e8560b0?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=600&h=400&fit=crop"], tech: ["PHP", "Laravel"], features: ["Search book", "Reader review"], testimonial: { name: "Dewi Lestari", role: "Book Seller", text: "Pelanggan semakin banyak!", avatar: "DL" } },
+                { id: 5, name: "Kommerce", category: "Ecommerce", price: 589000, desc: "Toko online lengkap dengan fitur modern.", longDesc: "Kommerce adalah solusi ecommerce lengkap.", img: "https://images.unsplash.com/photo-1556742049-0cfed2f7a0a8?w=600&h=400&fit=crop", images: ["https://images.unsplash.com/photo-1556742049-0cfed2f7a0a8?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1556742031-c6961e8560b0?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=600&h=400&fit=crop"], tech: ["Next.js 14", "Stripe"], features: ["Multi-vendor", "Wishlist"], testimonial: { name: "Dian Permata", role: "Owner", text: "Penjualan meningkat drastis!", avatar: "DP" }, demoLink: "https://vintacts.github.io/demo/kommerce" },
+                { id: 6, name: "FashionShop", category: "Ecommerce", price: 529000, desc: "Template toko fashion stylish.", longDesc: "FashionShop hadir dengan desain elegan.", img: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop", images: ["https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1556742031-c6961e8560b0?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=600&h=400&fit=crop"], tech: ["Vue.js", "SCSS"], features: ["Quick view", "Product filter"], testimonial: { name: "Nina Zulianti", role: "Brand Owner", text: "Penjualan online meningkat 50%!", avatar: "NZ" }, demoLink: "https://vintacts.github.io/demo/fashionshop" },
+                { id: 7, name: "ElectroMart", category: "Ecommerce", price: 649000, desc: "Toko elektronik layout modern.", longDesc: "ElectroMart untuk produk elektronik.", img: "https://images.unsplash.com/photo-1550009158-9ebf69173e03?w=600&h=400&fit=crop", images: ["https://images.unsplash.com/photo-1550009158-9ebf69173e03?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1556742031-c6961e8560b0?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=600&h=400&fit=crop"], tech: ["React", "Node.js"], features: ["Product compare", "Reviews"], testimonial: { name: "Bambang S", role: "Store Owner", text: "Sangat membantu bisnis saya!", avatar: "BS" }, demoLink: "https://vintacts.github.io/demo/electromart" },
+                { id: 8, name: "BookStore", category: "Ecommerce", price: 449000, desc: "Toko buku online minimalis.", longDesc: "BookStore dengan fitur pencarian buku.", img: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=600&h=400&fit=crop", images: ["https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1556742031-c6961e8560b0?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=600&h=400&fit=crop"], tech: ["PHP", "Laravel"], features: ["Search book", "Reader review"], testimonial: { name: "Dewi Lestari", role: "Book Seller", text: "Pelanggan semakin banyak!", avatar: "DL" }, demoLink: "https://vintacts.github.io/demo/bookstore" },
                 
                 // Company Profile (4 produk)
-                { id: 9, name: "TechCorp", category: "Company Profile", price: 399000, desc: "Profil perusahaan modern.", longDesc: "TechCorp template company profile profesional untuk perusahaan teknologi dan startup.", img: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop", images: ["https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1497215842964-222b430dc094?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=600&h=400&fit=crop"], tech: ["HTML5", "CSS3"], features: ["Fully responsive", "SEO optimized"], testimonial: { name: "Guntur Rahardjo", role: "CEO", text: "Sangat profesional!", avatar: "GR" } },
-                { id: 10, name: "Consultio", category: "Company Profile", price: 469000, desc: "Template konsultan bisnis.", longDesc: "Consultio memiliki halaman layanan dan tim ahli yang cocok untuk bisnis konsultan.", img: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop", images: ["https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1497215842964-222b430dc094?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=600&h=400&fit=crop"], tech: ["Bootstrap 5"], features: ["Case studies", "Team profiles"], testimonial: { name: "Hendra S", role: "Consultant", text: "Klien baru bertambah!", avatar: "HS" } },
-                { id: 11, name: "StartupHub", category: "Company Profile", price: 429000, desc: "Profil perusahaan rintisan.", longDesc: "StartupHub untuk startup teknologi yang ingin tampil profesional di mata investor.", img: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=600&h=400&fit=crop", images: ["https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1497215842964-222b430dc094?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=600&h=400&fit=crop"], tech: ["Tailwind"], features: ["Pitch deck", "Investor page"], testimonial: { name: "Rina K", role: "Founder", text: "Investor impressed!", avatar: "RK" } },
-                { id: 12, name: "EduCenter", category: "Company Profile", price: 359000, desc: "Profil lembaga pendidikan.", longDesc: "EduCenter memiliki halaman program dan fasilitas yang lengkap untuk lembaga pendidikan.", img: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&h=400&fit=crop", images: ["https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1497215842964-222b430dc094?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=600&h=400&fit=crop"], tech: ["WordPress"], features: ["Course list", "Facility gallery"], testimonial: { name: "Dr. Amin", role: "Director", text: "Pendaftaran siswa meningkat!", avatar: "DA" } },
+                { id: 9, name: "TechCorp", category: "Company Profile", price: 399000, desc: "Profil perusahaan modern.", longDesc: "TechCorp template company profile profesional.", img: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop", images: ["https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1497215842964-222b430dc094?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=600&h=400&fit=crop"], tech: ["HTML5", "CSS3"], features: ["Fully responsive", "SEO optimized"], testimonial: { name: "Guntur Rahardjo", role: "CEO", text: "Sangat profesional!", avatar: "GR" }, demoLink: "https://vintacts.github.io/demo/techcorp" },
+                { id: 10, name: "Consultio", category: "Company Profile", price: 469000, desc: "Template konsultan bisnis.", longDesc: "Consultio memiliki halaman layanan dan tim ahli.", img: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop", images: ["https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1497215842964-222b430dc094?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=600&h=400&fit=crop"], tech: ["Bootstrap 5"], features: ["Case studies", "Team profiles"], testimonial: { name: "Hendra S", role: "Consultant", text: "Klien baru bertambah!", avatar: "HS" }, demoLink: "https://vintacts.github.io/demo/consultio" },
+                { id: 11, name: "StartupHub", category: "Company Profile", price: 429000, desc: "Profil perusahaan rintisan.", longDesc: "StartupHub untuk startup teknologi.", img: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=600&h=400&fit=crop", images: ["https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1497215842964-222b430dc094?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=600&h=400&fit=crop"], tech: ["Tailwind"], features: ["Pitch deck", "Investor page"], testimonial: { name: "Rina K", role: "Founder", text: "Investor impressed!", avatar: "RK" }, demoLink: "https://vintacts.github.io/demo/startuphub" },
+                { id: 12, name: "EduCenter", category: "Company Profile", price: 359000, desc: "Profil lembaga pendidikan.", longDesc: "EduCenter memiliki halaman program dan fasilitas.", img: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&h=400&fit=crop", images: ["https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1497215842964-222b430dc094?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=600&h=400&fit=crop"], tech: ["WordPress"], features: ["Course list", "Facility gallery"], testimonial: { name: "Dr. Amin", role: "Director", text: "Pendaftaran siswa meningkat!", avatar: "DA" }, demoLink: "https://vintacts.github.io/demo/educenter" },
                 
                 // Landing Page (4 produk)
-                { id: 13, name: "ProductLaunch", category: "Landing Page", price: 299000, desc: "Landing page peluncuran produk.", longDesc: "ProductLaunch dengan fitur countdown timer yang cocok untuk peluncuran produk baru.", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop", images: ["https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1517299321609-52687d1bc55a?w=600&h=400&fit=crop"], tech: ["HTML", "CSS"], features: ["Countdown timer", "Email capture"], testimonial: { name: "Fajar P", role: "PM", text: "Lead generation meningkat!", avatar: "FP" } },
-                { id: 14, name: "AppShowcase", category: "Landing Page", price: 349000, desc: "Landing page aplikasi mobile.", longDesc: "AppShowcase menampilkan screenshot aplikasi dengan mockup phone yang menarik.", img: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop", images: ["https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1517299321609-52687d1bc55a?w=600&h=400&fit=crop"], tech: ["React"], features: ["Mockup phone", "Download buttons"], testimonial: { name: "Andi S", role: "Dev", text: "Unduhan aplikasi melonjak!", avatar: "AS" } },
-                { id: 15, name: "EventLand", category: "Landing Page", price: 279000, desc: "Landing page acara & konferensi.", longDesc: "EventLand dengan jadwal acara dan pendaftaran tiket yang mudah.", img: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=400&fit=crop", images: ["https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1517299321609-52687d1bc55a?w=600&h=400&fit=crop"], tech: ["HTML5", "CSS Grid"], features: ["Speaker list", "Ticket registration"], testimonial: { name: "Tiara A", role: "EO", text: "Penjualan tiket meningkat!", avatar: "TA" } },
-                { id: 16, name: "HealthHub", category: "Landing Page", price: 319000, desc: "Landing page layanan kesehatan.", longDesc: "HealthHub menampilkan layanan dan dokter dengan desain yang menenangkan.", img: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop", images: ["https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1517299321609-52687d1bc55a?w=600&h=400&fit=crop"], tech: ["Tailwind"], features: ["Service list", "Doctor profile"], testimonial: { name: "Dr. Ratna", role: "Clinic Owner", text: "Pasien baru semakin banyak!", avatar: "DR" } }
+                { id: 13, name: "ProductLaunch", category: "Landing Page", price: 299000, desc: "Landing page peluncuran produk.", longDesc: "ProductLaunch dengan hitung mundur.", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop", images: ["https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1517299321609-52687d1bc55a?w=600&h=400&fit=crop"], tech: ["HTML", "CSS"], features: ["Countdown timer", "Email capture"], testimonial: { name: "Fajar P", role: "PM", text: "Lead generation meningkat!", avatar: "FP" }, demoLink: "https://vintacts.github.io/demo/productlaunch" },
+                { id: 14, name: "AppShowcase", category: "Landing Page", price: 349000, desc: "Landing page aplikasi mobile.", longDesc: "AppShowcase menampilkan screenshot aplikasi.", img: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop", images: ["https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1517299321609-52687d1bc55a?w=600&h=400&fit=crop"], tech: ["React"], features: ["Mockup phone", "Download buttons"], testimonial: { name: "Andi S", role: "Dev", text: "Unduhan aplikasi melonjak!", avatar: "AS" }, demoLink: "https://vintacts.github.io/demo/appshowcase" },
+                { id: 15, name: "EventLand", category: "Landing Page", price: 279000, desc: "Landing page acara & konferensi.", longDesc: "EventLand dengan jadwal acara.", img: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=400&fit=crop", images: ["https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1517299321609-52687d1bc55a?w=600&h=400&fit=crop"], tech: ["HTML5", "CSS Grid"], features: ["Speaker list", "Ticket registration"], testimonial: { name: "Tiara A", role: "EO", text: "Penjualan tiket meningkat!", avatar: "TA" }, demoLink: "https://vintacts.github.io/demo/eventland" },
+                { id: 16, name: "HealthHub", category: "Landing Page", price: 319000, desc: "Landing page layanan kesehatan.", longDesc: "HealthHub menampilkan layanan dan dokter.", img: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop", images: ["https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1517299321609-52687d1bc55a?w=600&h=400&fit=crop"], tech: ["Tailwind"], features: ["Service list", "Doctor profile"], testimonial: { name: "Dr. Ratna", role: "Clinic Owner", text: "Pasien baru semakin banyak!", avatar: "DR" }, demoLink: "https://vintacts.github.io/demo/healthhub" }
             ];
 
             // ============================================
@@ -906,38 +933,32 @@
                 });
             };
 
-            // ============================================
-            // QRIS COMPONENT
-            // ============================================
-            function getQRISHTML() {
+            const getQRISHTML = () => {
                 if (QRIS_IMAGE_URL && QRIS_IMAGE_URL.trim() !== "") {
                     return `<img class="qris-image" src="${QRIS_IMAGE_URL}" alt="QRIS Payment">`;
-                } else {
-                    return `
-                        <div class="qris-placeholder">
-                            <i class="fas fa-qrcode"></i>
-                            <p>Scan QRIS untuk pembayaran</p>
-                            <p style="font-size:0.7rem;">DANA / OVO / GoPay</p>
-                            <p style="font-size:0.6rem; margin-top:8px;">(Ganti QRIS_IMAGE_URL dengan foto QRIS asli Anda)</p>
-                        </div>
-                    `;
                 }
-            }
+                return `
+                    <div class="qris-placeholder">
+                        <i class="fas fa-qrcode"></i>
+                        <p>Scan QRIS untuk pembayaran</p>
+                        <p style="font-size:0.7rem;">DANA / OVO / GoPay</p>
+                        <p style="font-size:0.6rem; margin-top:8px;">(Ganti QRIS_IMAGE_URL dengan foto QRIS asli Anda)</p>
+                    </div>
+                `;
+            };
 
             // ============================================
             // RENDER FUNCTIONS
             // ============================================
             
-            // RENDER HOME PAGE (Product Grid)
+            // Render Home Page (Product Grid)
             function renderHomePage() {
                 currentView = "home";
                 selectedProduct = null;
                 
-                // Filter products based on active category
-                let filtered = products;
-                if (activeCategory !== "Semua") {
-                    filtered = products.filter(p => p.category === activeCategory);
-                }
+                const filtered = activeCategory === "Semua" 
+                    ? products 
+                    : products.filter(p => p.category === activeCategory);
                 
                 const mainContent = document.getElementById("mainContent");
                 if (!mainContent) return;
@@ -968,7 +989,7 @@
                         ${filtered.map(p => `
                             <div class="product-card" data-id="${p.id}">
                                 <div class="card-img" style="background-image:url('${p.img}');">
-                                    <span class="card-cat">${p.category}</span>
+                                    <span class="card-cat">${escapeHtml(p.category)}</span>
                                 </div>
                                 <div class="card-info">
                                     <div class="card-title">
@@ -990,7 +1011,7 @@
                     </div>
                 `;
                 
-                // Attach event listeners to buttons
+                // Attach event listeners
                 document.querySelectorAll('.btn-detail').forEach(btn => {
                     btn.addEventListener("click", (e) => {
                         e.stopPropagation();
@@ -1008,15 +1029,17 @@
                 });
             }
             
-            // RENDER DETAIL PAGE
+            // Render Detail Page (with View Button on Image)
             function renderDetailPage(product) {
                 if (!product) return;
                 
                 currentView = "detail";
                 selectedProduct = product;
+                
                 const images = product.images || [product.img, product.img, product.img];
                 const stars = "★★★★★";
                 const t = product.testimonial;
+                const demoUrl = product.demoLink || "#";
                 
                 const mainContent = document.getElementById("mainContent");
                 if (!mainContent) return;
@@ -1028,7 +1051,12 @@
                         </button>
                         <div class="detail-layout">
                             <div class="detail-gallery">
-                                <img class="detail-img-main" id="mainImg" src="${images[0]}">
+                                <div class="gallery-wrapper">
+                                    <img class="detail-img-main" id="mainImg" src="${images[0]}">
+                                    <a href="${demoUrl}" target="_blank" class="view-btn">
+                                        <i class="fas fa-eye"></i> View
+                                    </a>
+                                </div>
                                 <div class="detail-thumbs" id="thumbList">
                                     ${images.map((img, i) => `
                                         <div class="thumb ${i === 0 ? 'active' : ''}" data-img="${img}" style="background-image:url('${img}');"></div>
@@ -1070,21 +1098,14 @@
                     </div>
                 `;
                 
-                // Back button event
+                // Event Listeners
                 const backBtn = document.getElementById("backToHomeBtn");
-                if (backBtn) {
-                    backBtn.addEventListener("click", () => renderHomePage());
-                }
+                if (backBtn) backBtn.addEventListener("click", () => renderHomePage());
                 
-                // Buy button event
                 const buyBtn = document.getElementById("buyNowBtn");
-                if (buyBtn) {
-                    buyBtn.addEventListener("click", () => {
-                        renderCheckoutPage(product);
-                    });
-                }
+                if (buyBtn) buyBtn.addEventListener("click", () => renderCheckoutPage(product));
                 
-                // Thumbnail click events
+                // Thumbnail click handler
                 const thumbs = document.querySelectorAll(".thumb");
                 const mainImg = document.getElementById("mainImg");
                 thumbs.forEach(thumb => {
@@ -1096,7 +1117,7 @@
                 });
             }
             
-            // RENDER CHECKOUT PAGE
+            // Render Checkout Page
             function renderCheckoutPage(product) {
                 if (!product) return;
                 
@@ -1134,28 +1155,14 @@
                                 </div>
                                 <div class="instruction-steps">
                                     <h4><i class="fas fa-clipboard-list"></i> Cara Pemesanan</h4>
-                                    <div class="step-item">
-                                        <div class="step-number">1</div>
-                                        <div class="step-text">Screenshoot halaman ini</div>
-                                    </div>
-                                    <div class="step-item">
-                                        <div class="step-number">2</div>
-                                        <div class="step-text">Bayar dengan harga yang sudah ditentukan di website</div>
-                                    </div>
-                                    <div class="step-item">
-                                        <div class="step-number">3</div>
-                                        <div class="step-text">Screenshoot bukti pembayaran</div>
-                                    </div>
-                                    <div class="step-item">
-                                        <div class="step-number">4</div>
-                                        <div class="step-text">Kirim bukti pembayaran 2 screenshoot tadi</div>
-                                    </div>
+                                    <div class="step-item"><div class="step-number">1</div><div class="step-text">Screenshoot halaman ini</div></div>
+                                    <div class="step-item"><div class="step-number">2</div><div class="step-text">Bayar dengan harga yang sudah ditentukan di website</div></div>
+                                    <div class="step-item"><div class="step-number">3</div><div class="step-text">Screenshoot bukti pembayaran</div></div>
+                                    <div class="step-item"><div class="step-number">4</div><div class="step-text">Kirim bukti pembayaran 2 screenshoot tadi</div></div>
                                 </div>
                             </div>
                             <div class="checkout-right">
-                                <div class="qris-box">
-                                    ${getQRISHTML()}
-                                </div>
+                                <div class="qris-box">${getQRISHTML()}</div>
                                 <div class="qris-note">Scan QRIS di atas dengan Apk pembayaran anda</div>
                                 <button class="btn-send-proof" id="sendProofBtn">
                                     <i class="fas fa-paper-plane"></i> Kirim Bukti
@@ -1165,24 +1172,20 @@
                     </div>
                 `;
                 
-                // Back button event
+                // Event Listeners
                 const backBtn = document.getElementById("backToPrev");
                 if (backBtn) {
                     backBtn.addEventListener("click", () => {
-                        if (selectedProduct) {
-                            renderDetailPage(selectedProduct);
-                        } else {
-                            renderHomePage();
-                        }
+                        if (selectedProduct) renderDetailPage(selectedProduct);
+                        else renderHomePage();
                     });
                 }
                 
-                // Form elements
                 const buyerNameInput = document.getElementById("buyerName");
                 const buyerEmailInput = document.getElementById("buyerEmail");
                 const sendProofBtn = document.getElementById("sendProofBtn");
                 
-                function checkFormAndEnableButton() {
+                const checkFormAndEnableButton = () => {
                     const name = buyerNameInput ? buyerNameInput.value.trim() : "";
                     const email = buyerEmailInput ? buyerEmailInput.value.trim() : "";
                     if (sendProofBtn) {
@@ -1194,14 +1197,10 @@
                             sendProofBtn.disabled = true;
                         }
                     }
-                }
+                };
                 
-                if (buyerNameInput) {
-                    buyerNameInput.addEventListener("input", checkFormAndEnableButton);
-                }
-                if (buyerEmailInput) {
-                    buyerEmailInput.addEventListener("input", checkFormAndEnableButton);
-                }
+                if (buyerNameInput) buyerNameInput.addEventListener("input", checkFormAndEnableButton);
+                if (buyerEmailInput) buyerEmailInput.addEventListener("input", checkFormAndEnableButton);
                 
                 if (sendProofBtn) {
                     sendProofBtn.disabled = true;
@@ -1211,7 +1210,7 @@
                         const email = buyerEmailInput ? buyerEmailInput.value.trim() : "";
                         const productName = product.name;
                         const message = `Halo Vintacts, saya ${name} (${email}) ingin mengirim bukti pembayaran untuk template "${productName}". Berikut buktinya:`;
-                        window.open(`https://wa.me/6289684219904?text=${encodeURIComponent(message)}`, "_blank");
+                        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, "_blank");
                     });
                 }
             }
@@ -1232,17 +1231,12 @@
             
             // Home link (logo)
             const homeLink = document.getElementById("homeLink");
-            if (homeLink) {
-                homeLink.addEventListener("click", () => renderHomePage());
-            }
+            if (homeLink) homeLink.addEventListener("click", () => renderHomePage());
             
             // ============================================
             // SECURITY FEATURES
             // ============================================
-            // Disable right click
             document.addEventListener('contextmenu', (e) => e.preventDefault());
-            
-            // Disable developer tools shortcuts
             document.addEventListener('keydown', (e) => {
                 if ((e.ctrlKey && (e.key === 'u' || e.key === 'U' || e.key === 's' || e.key === 'S')) || 
                     (e.ctrlKey && e.shiftKey && e.key === 'I')) {
@@ -1254,7 +1248,6 @@
             // START APPLICATION
             // ============================================
             renderHomePage();
-            
         })();
     </script>
 </body>
