@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&amp;family=Space+Grotesk:wght@600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
@@ -94,19 +94,142 @@
         },
       }
     </script>
-<style>.material-symbols-outlined {
+<style>
+.material-symbols-outlined {
     font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
-    }
+}
 .bg-noise {
     background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDrvYLSwXotRmq1KKYZCYpU4aQ1kvwiXy5-ID1nptMYsYZsryahwdjNvhjC0ET-OxifrjxUM0Iv7tgUq9J6osdaVs79ob0snOmUCeX_NcW-heoA5gSnAbtz5AS923_xXwMMi8K1HA3YaUl-Prz2YYqT_nTiIbVQTS-VXUG0re3bclXR-GB_0C-GXfPRJFa00MJJDOp9TQv3l0JmQAud8sIBS8jC4x25qiaJ7XbOJoRhoYZcKj2pBO2yBDCI5L-85W-CO-CnBOiLIVA);
     opacity: 0.03
-    }</style>
+}
+
+/* === RESPONSIVE STYLES UNTUK MOBILE (tanpa mengubah desktop) === */
+@media (max-width: 768px) {
+    /* Navigation */
+    nav > div {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    
+    /* Hero Section */
+    .pt-48 {
+        padding-top: 6rem !important;
+    }
+    .pb-32 {
+        padding-bottom: 3rem !important;
+    }
+    .px-8 {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    h1.font-display-lg {
+        font-size: 2rem !important;
+        line-height: 1.2 !important;
+    }
+    .flex.flex-col.md\\:flex-row {
+        flex-direction: column !important;
+        gap: 2rem !important;
+    }
+    .w-full.md\\:w-3\\/5, .w-full.md\\:w-2\\/5 {
+        width: 100% !important;
+    }
+    img {
+        height: 300px !important;
+    }
+    .absolute.bottom-4.-left-4 {
+        bottom: 0.5rem !important;
+        left: 0.5rem !important;
+        padding: 1rem !important;
+    }
+    .absolute.bottom-4.-left-4 .font-headline-xl {
+        font-size: 1.5rem !important;
+    }
+    
+    /* Bento Grid Section */
+    .py-32 {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+    .grid.grid-cols-1.md\\:grid-cols-12 {
+        gap: 1rem !important;
+    }
+    .md\\:col-span-7, .md\\:col-span-5, .md\\:col-span-4, .md\\:col-span-8 {
+        grid-column: span 12 !important;
+    }
+    .p-10 {
+        padding: 1.5rem !important;
+    }
+    .grid.grid-cols-1.md\\:grid-cols-2 {
+        gap: 1rem !important;
+    }
+    
+    /* Stats Section */
+    .py-24 {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+    .grid.grid-cols-2.md\\:grid-cols-4 {
+        gap: 1.5rem !important;
+    }
+    .font-headline-xl {
+        font-size: 1.75rem !important;
+    }
+    
+    /* Quote Section */
+    .py-32 {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+    h2.font-headline-xl {
+        font-size: 1.5rem !important;
+    }
+    .material-symbols-outlined.text-primary-fixed\\/20.text-9xl {
+        font-size: 5rem !important;
+        top: -2rem !important;
+        left: -1rem !important;
+    }
+    
+    /* Footer */
+    footer > div {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 1rem !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    
+    /* Mobile Menu Panel */
+    .mobile-menu {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+    }
+    .mobile-menu.open {
+        max-height: 400px;
+        transition: max-height 0.3s ease-in;
+    }
+}
+
+@media (max-width: 480px) {
+    h1.font-display-lg {
+        font-size: 1.5rem !important;
+    }
+    .font-headline-xl {
+        font-size: 1.25rem !important;
+    }
+    .grid.grid-cols-2.md\\:grid-cols-4 {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+</style>
 </head>
-<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed overflow-x-hidden">
 <!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 bg-[#0A0A0A]/80 backdrop-blur-md border-b border-white/10">
 <div class="flex justify-between items-center px-8 py-4 max-w-[1280px] mx-auto">
 <div class="text-2xl font-black tracking-tighter text-white">Portofolio</div>
+
+<!-- Desktop Navigation -->
 <div class="hidden md:flex items-center gap-8">
 <a class="font-sans uppercase tracking-widest text-sm font-body-md text-gray-400 hover:text-white transition-colors hover:text-lime-400 hover:scale-105 transition-all" href="index.html">Home</a>
 <a class="font-sans uppercase tracking-widest text-sm font-body-md text-white font-bold border-b-2 border-lime-400 pb-1 hover:text-lime-400 hover:scale-105 transition-all" href="#">About</a>
@@ -115,12 +238,35 @@
 <a class="font-sans uppercase tracking-widest text-sm font-body-md text-gray-400 hover:text-white transition-colors hover:text-lime-400 hover:scale-105 transition-all" href="abilities.html">Abilities</a>
 <a class="font-sans uppercase tracking-widest text-sm font-body-md text-gray-400 hover:text-white transition-colors hover:text-lime-400 hover:scale-105 transition-all" href="contact.html">Contact</a>
 </div>
-<button class="bg-primary-fixed text-on-primary-fixed px-6 py-2 font-label-caps text-label-caps rounded-full hover:scale-105 active:scale-95 transition-all">
+
+<!-- Mobile & Desktop Button Container -->
+<div class="flex items-center gap-3">
+<button class="bg-primary-fixed text-on-primary-fixed px-6 py-2 font-label-caps text-label-caps rounded-full hover:scale-105 active:scale-95 transition-all hidden sm:inline-block">
+                Hire Me
+            </button>
+<button id="menuBtn" class="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</div>
+
+<!-- Mobile Menu Panel -->
+<div id="mobileMenu" class="mobile-menu md:hidden bg-[#0A0A0A]/95 backdrop-blur-md border-t border-white/10">
+<div class="flex flex-col px-6 py-4 gap-3">
+<a class="font-sans uppercase tracking-widest text-sm text-gray-400 hover:text-white transition-colors border-l-2 border-lime-400 pl-3 py-2" href="index.html">Home</a>
+<a class="font-sans uppercase tracking-widest text-sm text-white font-bold border-l-2 border-lime-400 pl-3 py-2" href="#">About</a>
+<a class="font-sans uppercase tracking-widest text-sm text-gray-400 hover:text-white transition-colors pl-3 py-2" href="education.html">Education</a>
+<a class="font-sans uppercase tracking-widest text-sm text-gray-400 hover:text-white transition-colors pl-3 py-2" href="project.html">Projects</a>
+<a class="font-sans uppercase tracking-widest text-sm text-gray-400 hover:text-white transition-colors pl-3 py-2" href="abilities.html">Abilities</a>
+<a class="font-sans uppercase tracking-widest text-sm text-gray-400 hover:text-white transition-colors pl-3 py-2" href="contact.html">Contact</a>
+<button class="bg-primary-fixed text-on-primary-fixed px-6 py-3 font-label-caps text-label-caps rounded-full w-full mt-2 hover:scale-105 active:scale-95 transition-all">
                 Hire Me
             </button>
 </div>
+</div>
 </nav>
-<main class="relative">
+
+<main class="relative overflow-x-hidden">
 <div class="absolute inset-0 bg-noise pointer-events-none"></div>
 <!-- Hero Section -->
 <section class="relative pt-48 pb-32 px-8 max-w-[1280px] mx-auto overflow-hidden">
@@ -247,7 +393,7 @@
 <footer class="bg-[#0A0A0A] w-full py-12 border-t border-white/10">
 <div class="flex flex-col md:flex-row justify-between items-center px-8 max-w-[1280px] mx-auto">
 <div class="mb-6 md:mb-0">
-<div class="text-lg font-bold text-white mb-2">Portofolio/div>
+<div class="text-lg font-bold text-white mb-2">Portofolio</div>
 <p class="font-sans text-xs tracking-widest text-gray-500 uppercase">© 2026 Vintacts. ENGINEERED WITH PRECISION.</p>
 </div>
 <div class="flex gap-8">
@@ -267,43 +413,50 @@
         easing: 'ease-out-cubic'
     });
 
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('open');
+            const iconSpan = menuBtn.querySelector('.material-symbols-outlined');
+            if (mobileMenu.classList.contains('open')) {
+                iconSpan.textContent = 'close';
+            } else {
+                iconSpan.textContent = 'menu';
+            }
+        });
+    }
+
     (function() {
-    // 1. CEK INSPECT ELEMENT (F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U)
     function disableInspect() {
-        // Cegah klik kanan
         document.addEventListener('contextmenu', function(e) {
             e.preventDefault();
             return false;
         });
         
-        // Cegah shortcut keyboard inspect
         document.addEventListener('keydown', function(e) {
-            // F12
             if (e.key === 'F12') {
                 e.preventDefault();
                 return false;
             }
-            // Ctrl+Shift+I (Windows/Linux)
             if (e.ctrlKey && e.shiftKey && e.key === 'I') {
                 e.preventDefault();
                 return false;
             }
-            // Ctrl+Shift+J (Console)
             if (e.ctrlKey && e.shiftKey && e.key === 'J') {
                 e.preventDefault();
                 return false;
             }
-            // Ctrl+U (View Source)
             if (e.ctrlKey && e.key === 'u') {
                 e.preventDefault();
                 return false;
             }
-            // Ctrl+S (Save)
             if (e.ctrlKey && e.key === 's') {
                 e.preventDefault();
                 return false;
             }
-            // Ctrl+Shift+C (Inspect Element)
             if (e.ctrlKey && e.shiftKey && e.key === 'C') {
                 e.preventDefault();
                 return false;
@@ -311,9 +464,7 @@
         });
     }
     
-    // 2. CEGAH SAVE GAMBAR (drag & drop, save image as)
     function disableImageSaving() {
-        // Cegah drag image
         const images = document.querySelectorAll('img');
         images.forEach(img => {
             img.addEventListener('dragstart', function(e) {
@@ -324,13 +475,11 @@
                 e.preventDefault();
                 return false;
             });
-            // Nonaktifkan pointer events pada gambar agar tidak bisa klik kanan simpan
             img.style.userSelect = 'none';
             img.style.webkitUserSelect = 'none';
-            img.style.pointerEvents = 'auto'; // tetap bisa dilihat
+            img.style.pointerEvents = 'auto';
         });
         
-        // Cegah drag dari seluruh body
         document.body.addEventListener('dragstart', function(e) {
             if (e.target.tagName === 'IMG') {
                 e.preventDefault();
@@ -339,7 +488,6 @@
         });
     }
     
-    // 3. DETEKSI DEVTOOLS TERBUKA (silent - tanpa notifikasi)
     function detectDevTools() {
         let devtoolsOpen = false;
         const element = new Image();
@@ -347,8 +495,6 @@
         Object.defineProperty(element, 'id', {
             get: function() {
                 devtoolsOpen = true;
-                // Silent: tanpa alert/notifikasi, hanya redirect atau kosong
-                // Bisa diaktifkan redirect jika ingin, tapi dimatikan dulu
                 return '';
             }
         });
@@ -356,18 +502,13 @@
         setInterval(function() {
             devtoolsOpen = false;
             console.log(element);
-            console.clear(); // bersihkan console agar tidak berisik
+            console.clear();
             if (devtoolsOpen) {
-                // Silent: tidak melakukan apa-apa agar tidak mengganggu user
-                // Opsional: bisa arahkan ke blank page (aktifkan jika perlu)
-                // if (window.location.href !== 'about:blank') {
-                //     window.location.href = 'about:blank';
-                // }
+                // silent
             }
         }, 1000);
     }
     
-    // 4. CEK DEBUGGER STATEMENT (silent)
     function disableDebugger() {
         setInterval(function() {
             try {
@@ -376,51 +517,29 @@
                     debugger;
                     const end = Date.now();
                     if (end - start > 100) {
-                        // debugger terdeteksi, silent saja
+                        // debugger terdeteksi
                     }
                 })();
             } catch(e) {}
         }, 500);
     }
     
-    // 5. OVERRIDE CONSOLE METHODS (opsional, nonaktifkan log)
-    function disableConsole() {
-        if (!window.console) return;
-        const noop = function() {};
-        const methods = ['log', 'info', 'warn', 'error', 'debug', 'trace', 'table', 'group', 'groupCollapsed', 'groupEnd'];
-        methods.forEach(function(method) {
-            if (console[method]) {
-                console[method] = noop;
-            }
-        });
-    }
-    
-    // 6. CEK SELECTION & COPY (opsional - text masih bisa copy, hanya image & inspect)
     function disableSelection() {
-        // Nonaktifkan seleksi text secara default (optional)
-        // document.body.style.userSelect = 'none';
-        // document.body.style.webkitUserSelect = 'none';
-        // document.body.style.msUserSelect = 'none';
-        // Jika ingin text tetap bisa copy, komentar baris di atas
+        // Biarkan text masih bisa di-copy
     }
     
-    // 7. CEK ELEMEN DEVTOOLS DENGAN WIDTH/HEIGHT
     function detectDevToolsBySize() {
         setInterval(function() {
             const threshold = 160;
             const widthDiff = window.outerWidth - window.innerWidth;
             const heightDiff = window.outerHeight - window.innerHeight;
             if (widthDiff > threshold || heightDiff > threshold) {
-                // devtools terbuka, silent - tidak lakukan apa-apa
-                // bisa arahkan ke blank page jika perlu
-                // window.location.href = 'about:blank';
+                // silent
             }
         }, 1500);
     }
     
-    // 8. CEK APAKAH INNERHTML DI MODIFIKASI
     function preventDomInspection() {
-        // Override setter untuk atribut tertentu (optional)
         const originalAddEventListener = EventTarget.prototype.addEventListener;
         EventTarget.prototype.addEventListener = function(type, listener, options) {
             if (type === 'DOMNodeInserted' || type === 'DOMAttrModified') {
@@ -430,17 +549,14 @@
         };
     }
     
-    // 9. JALANKAN SEMUA PROTEKSI
     disableInspect();
     disableImageSaving();
     detectDevTools();
     disableDebugger();
-    // disableConsole(); // Hapus komentar jika ingin nonaktifkan console.log sepenuhnya
     disableSelection();
     detectDevToolsBySize();
     preventDomInspection();
     
-    // 10. PROTEKSI TAMBAHAN: CEK KETIKA INSPECT MENCoba akses element
     Object.freeze(document);
     try {
         Object.defineProperty(window, 'outerHeight', {
@@ -451,32 +567,27 @@
         });
     } catch(e) {}
     
-    // 11. CEK jQuery (jika ada) amankan juga
     if (typeof jQuery !== 'undefined') {
         jQuery.fn.init.prototype.html = function() {
             return '';
         };
     }
     
-    // 12. CEK MOUSE MIDDLE CLICK (prevent view source)
     document.addEventListener('auxclick', function(e) {
-        if (e.button === 1) { // middle click
+        if (e.button === 1) {
             e.preventDefault();
             return false;
         }
     });
     
-    // 13. HAPUS NODE.JS GLOBAL VARIABLE
     delete window.process;
     delete window.require;
     delete window.global;
     
-    // 14. CEK PDF GENERATOR / PRINT (jika user print page)
     window.addEventListener('beforeprint', function() {
-        window.location.reload(); // silent, reload saat print
+        window.location.reload();
     });
     
-    // 15. PASTIKAN TIDAK BISA SAVE VIA DRAG FILE
     window.addEventListener('dragover', function(e) {
         e.preventDefault();
         return false;
@@ -486,13 +597,11 @@
         return false;
     });
     
-    // 16. PSEUDO: Hapus riwayat console.log sebelumnya (refresh console)
     setInterval(function() {
         if (typeof console !== 'undefined' && console.clear) {
             console.clear();
         }
     }, 200);
-    
 })();
 </script>
 </body>
