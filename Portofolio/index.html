@@ -2,10 +2,9 @@
 <html class="dark" lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&amp;family=Space+Grotesk:wght@600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <!-- AOS CSS -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
@@ -94,16 +93,208 @@
             background-image: radial-gradient(circle at 2px 2px, rgba(202, 243, 0, 0.05) 1px, transparent 0);
             background-size: 32px 32px;
         }
-        /* Animasi tambahan untuk mempercantik AOS loop (opsional) */
         [data-aos="fade-up"] {
             transform: translate3d(0, 30px, 0);
         }
         [data-aos="zoom-in"] {
             transform: scale(0.95);
         }
+        
+        /* === RESPONSIVE FIXES UNTUK MOBILE (tanpa mengubah desktop) === */
+        @media (max-width: 768px) {
+            /* Header adjustments */
+            header > div {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+                padding-top: 0.75rem !important;
+                padding-bottom: 0.75rem !important;
+            }
+            header > div > div:first-child {
+                font-size: 1.25rem !important;
+            }
+            header button {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+                padding-top: 0.5rem !important;
+                padding-bottom: 0.5rem !important;
+                font-size: 0.75rem !important;
+            }
+            
+            /* Hero section */
+            section:first-of-type {
+                padding-top: 4rem !important;
+                padding-bottom: 4rem !important;
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+            h1 {
+                font-size: 2.5rem !important;
+                line-height: 1.2 !important;
+            }
+            h1 br {
+                display: none;
+            }
+            .flex-wrap.gap-6 {
+                gap: 1rem !important;
+            }
+            .flex-wrap.gap-6 button {
+                padding-left: 1.5rem !important;
+                padding-right: 1.5rem !important;
+                padding-top: 0.75rem !important;
+                padding-bottom: 0.75rem !important;
+                font-size: 0.75rem !important;
+            }
+            
+            /* Expertise section */
+            section.max-w-\\[1280px\\].mx-auto.px-8.py-\\[120px\\] {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+                padding-top: 4rem !important;
+                padding-bottom: 4rem !important;
+            }
+            .flex-col.md\\:flex-row.justify-between.items-end {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 1rem !important;
+            }
+            .text-right {
+                text-align: left !important;
+            }
+            h2 {
+                font-size: 2rem !important;
+            }
+            
+            /* Grid cards */
+            .grid.grid-cols-1.md\\:grid-cols-3 {
+                gap: 1rem !important;
+            }
+            .bg-surface-container-low.p-card-padding {
+                padding: 1.5rem !important;
+            }
+            .md\\:col-span-2 {
+                grid-column: span 1 !important;
+            }
+            .flex.flex-col.md\\:flex-row.justify-between.items-center.gap-8 {
+                flex-direction: column !important;
+                text-align: center !important;
+                padding: 1.5rem !important;
+            }
+            .whitespace-nowrap {
+                white-space: normal !important;
+            }
+            
+            /* Stats section */
+            .border-y.border-white\\/10.bg-\\[\\#0A0A0A\\] > div {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+                flex-direction: row !important;
+                flex-wrap: wrap !important;
+                justify-content: space-between !important;
+                gap: 1.5rem !important;
+            }
+            .flex.flex-col {
+                flex: 1 1 auto !important;
+                min-width: 80px !important;
+                text-align: center !important;
+            }
+            .text-primary-fixed.font-headline-xl.text-headline-xl {
+                font-size: 1.5rem !important;
+            }
+            
+            /* Call to Action */
+            section.max-w-\\[1280px\\].mx-auto.px-8.py-\\[120px\\].text-center {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+                padding-top: 3rem !important;
+                padding-bottom: 3rem !important;
+            }
+            .relative.inline-block.px-12.py-16 {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+                padding-top: 2rem !important;
+                padding-bottom: 2rem !important;
+            }
+            h2.font-display-lg.text-headline-xl {
+                font-size: 1.75rem !important;
+            }
+            .flex.justify-center.gap-6 {
+                flex-direction: column !important;
+                align-items: center !important;
+                gap: 0.75rem !important;
+            }
+            .flex.justify-center.gap-6 button {
+                width: auto !important;
+                min-width: 180px !important;
+            }
+            
+            /* Footer */
+            footer > div {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+                flex-direction: column !important;
+                text-align: center !important;
+                gap: 1.5rem !important;
+            }
+            .flex.gap-10 {
+                gap: 2rem !important;
+            }
+            
+            /* Image container adjustments */
+            .lg\\:col-span-5.relative {
+                margin-top: 2rem !important;
+            }
+            .absolute.-top-10.-left-10.w-64.h-64 {
+                width: 12rem !important;
+                height: 12rem !important;
+            }
+            .absolute.-bottom-6.-right-6.w-32.h-32 {
+                width: 6rem !important;
+                height: 6rem !important;
+            }
+            
+            /* Typography fixes for mobile */
+            .font-body-lg.text-body-lg {
+                font-size: 1rem !important;
+            }
+            .font-body-md.text-body-md {
+                font-size: 0.875rem !important;
+            }
+            .max-w-xl, .max-w-md, .max-w-lg {
+                max-width: 100% !important;
+            }
+            
+            /* Grid gap fixes */
+            .gap-gutter {
+                gap: 2rem !important;
+            }
+        }
+        
+        /* Additional fixes for very small screens (375px and below) */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem !important;
+            }
+            .text-primary-fixed.font-headline-xl.text-headline-xl {
+                font-size: 1.25rem !important;
+            }
+            .flex-wrap.gap-6 {
+                flex-direction: column !important;
+                align-items: stretch !important;
+            }
+            .flex-wrap.gap-6 button {
+                width: 100% !important;
+                justify-content: center !important;
+            }
+            .stats-section > div {
+                gap: 1rem !important;
+            }
+            .flex.flex-col {
+                min-width: 70px !important;
+            }
+        }
     </style>
 </head>
-<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-on-primary">
+<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-on-primary overflow-x-hidden">
 <!-- TopNavBar -->
 <header class="fixed top-0 w-full z-50 bg-[#0A0A0A]/80 backdrop-blur-md border-b border-white/10" data-aos="fade-down" data-aos-duration="600" data-aos-once="false" data-aos-loop="true" data-aos-anchor-placement="top-bottom">
 <div class="flex justify-between items-center px-8 py-4 max-w-[1280px] mx-auto">
@@ -121,13 +312,13 @@
             </button>
 </div>
 </header>
-<main class="pt-24 kinetic-bg">
+<main class="pt-24 kinetic-bg overflow-x-hidden">
 <!-- Hero Section -->
 <section class="max-w-[1280px] mx-auto px-8 py-[120px] grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
 <div class="lg:col-span-7 z-10" data-aos="fade-right" data-aos-duration="800" data-aos-once="false" data-aos-loop="true" data-aos-anchor-placement="top-bottom">
-<div class="flex items-center gap-4 mb-6">
+<div class="flex items-center gap-4 mb-6 flex-wrap">
 <span class="w-12 h-[2px] bg-primary-fixed"></span>
-<span class="text-primary-fixed font-label-caps text-label-caps uppercase tracking-widest">Network Engineer &amp; Frontend Dev</span>
+<span class="text-primary-fixed font-label-caps text-label-caps uppercase tracking-widest text-sm">Network Engineer &amp; Frontend Dev</span>
 </div>
 <h1 class="font-display-lg text-display-lg text-white mb-8">
                     ARCHITECTING <br/>
@@ -179,7 +370,7 @@
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 <!-- Networking Card -->
-<div class="md:col-span-2 bg-surface-container-low p-card-padding border border-white/10 hover:border-primary-fixed transition-colors group" data-aos="fade-up" data-aos-duration="700" data-aos-once="false" data-aos-loop="true" data-aos-delay="0">
+<div class="md:col-span-2 bg-surface-container-low p-6 border border-white/10 hover:border-primary-fixed transition-colors group" data-aos="fade-up" data-aos-duration="700" data-aos-once="false" data-aos-loop="true" data-aos-delay="0">
 <span class="material-symbols-outlined text-primary-fixed text-4xl mb-6">router</span>
 <h3 class="font-headline-md text-headline-md text-white mb-4">Network Engineering</h3>
 <p class="font-body-md text-body-md text-on-surface-variant mb-8 max-w-md">
@@ -192,7 +383,7 @@
 </div>
 </div>
 <!-- Frontend Card -->
-<div class="bg-surface-container-low p-card-padding border border-white/10 hover:border-primary-fixed transition-colors group" data-aos="fade-up" data-aos-duration="700" data-aos-once="false" data-aos-loop="true" data-aos-delay="100">
+<div class="bg-surface-container-low p-6 border border-white/10 hover:border-primary-fixed transition-colors group" data-aos="fade-up" data-aos-duration="700" data-aos-once="false" data-aos-loop="true" data-aos-delay="100">
 <span class="material-symbols-outlined text-primary-fixed text-4xl mb-6">terminal</span>
 <h3 class="font-headline-md text-headline-md text-white mb-4">Frontend Dev</h3>
 <p class="font-body-md text-body-md text-on-surface-variant mb-8">
@@ -207,13 +398,13 @@
 </div>
 </div>
 <!-- Ability Metric 1 -->
-<div class="bg-surface-container-low p-card-padding border border-white/10 flex flex-col justify-center items-center text-center" data-aos="zoom-in" data-aos-duration="600" data-aos-once="false" data-aos-loop="true" data-aos-delay="200">
+<div class="bg-surface-container-low p-6 border border-white/10 flex flex-col justify-center items-center text-center" data-aos="zoom-in" data-aos-duration="600" data-aos-once="false" data-aos-loop="true" data-aos-delay="200">
 <div class="font-headline-xl text-headline-xl text-primary-fixed mb-2">120+</div>
 <div class="font-label-caps text-label-caps text-on-surface-variant uppercase">Projects Deployed</div>
 </div>
 <!-- Ability Metric 2 -->
-<div class="md:col-span-2 bg-primary-fixed p-card-padding flex flex-col md:flex-row justify-between items-center gap-8" data-aos="flip-up" data-aos-duration="800" data-aos-once="false" data-aos-loop="true" data-aos-delay="100">
-<div class="text-on-primary">
+<div class="md:col-span-2 bg-primary-fixed p-6 flex flex-col md:flex-row justify-between items-center gap-8" data-aos="flip-up" data-aos-duration="800" data-aos-once="false" data-aos-loop="true" data-aos-delay="100">
+<div class="text-on-primary text-center md:text-left">
 <h4 class="font-headline-md text-headline-md mb-2">Security-First Mindset</h4>
 <p class="font-body-md text-body-md opacity-80">Integrating robust security protocols into every layer of the stack.</p>
 </div>
@@ -264,7 +455,7 @@
 <footer class="bg-[#0A0A0A] border-t border-white/10 w-full py-12" data-aos="fade" data-aos-duration="800" data-aos-once="false" data-aos-loop="true" data-aos-anchor-placement="top-bottom">
 <div class="flex flex-col md:flex-row justify-between items-center px-8 max-w-[1280px] mx-auto">
 <div class="mb-8 md:mb-0">
-<div class="text-lg font-bold text-white mb-2">Portovolio</div>
+<div class="text-lg font-bold text-white mb-2">Portofolio</div>
 <p class="font-sans text-xs tracking-widest text-gray-500 uppercase">© 2026 Vintacts. ENGINEERED WITH PRECISION.</p>
 </div>
 <div class="flex gap-10">
@@ -278,82 +469,55 @@
 <!-- AOS JS -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-        // Inisialisasi AOS dengan konfigurasi agar loop animasi aktif sekaligus scroll muncul kembali.
-        // Parameter: once: false (agar animasi terjadi setiap kali elemen masuk viewport saat scroll naik/turun)
-        // dan menggunakan atribut data-aos-loop="true" pada tiap elemen untuk efek loop terus menerus jika diperlukan.
-        // Namun untuk efek loop yang lebih halus, kita kombinasikan dengan atribut data-aos-once="false" yang memicu animasi ulang setiap kali elemen masuk viewport.
-        // Berdasarkan permintaan: "animasi AOS loop (scroll atas/bawah tetap akan muncul)" artinya ketika user scroll, setiap elemen akan memutar animasi lagi jika keluar-masuk viewport.
-        // Atribut data-aos-loop="true" dalam AOS tidak bekerja out-of-the-box untuk continuous infinite, tapi dengan data-aos-once="false" dan kombinasi data-aos-* yang tepat,
-        // animasi akan diulang setiap kali elemen terlihat saat scroll. Itulah 'loop' dalam konteks scroll.
-        // Agar lebih dramatis, kita set juga durasi dan easing.
         AOS.init({
-            duration: 800,          // durasi default animasi
-            once: false,            // MEMASTIKAN ANIMASI LOOP (muncul saat scroll atas/bawah)
-            mirror: true,           // animasi juga terjadi saat scroll ke atas (ketika elemen kembali ke viewport)
-            offset: 20,             // sedikit offset agar lebih responsif
+            duration: 800,
+            once: false,
+            mirror: true,
+            offset: 20,
             easing: 'ease-out-cubic',
             disable: false
         });
         
-        // Tambahkan sedikit gaya tambahan untuk memperhalus efek CSS transisi agar semua properti transformasi berjalan mulus
         const style = document.createElement('style');
         style.textContent = `
             [data-aos] {
                 transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
                 will-change: transform, opacity;
             }
-            /* Efek tambahan untuk loop natural saat scroll - memastikan setiap elemen yang terlihat kembali memicu animasi ulang */
             body {
                 scroll-behavior: smooth;
             }
         `;
         document.head.appendChild(style);
-        
-        // Opsional: jika ingin efek loop terus menerus tanpa henti (meskipun tanpa scroll) 
-        // namun permintaan adalah "scroll atas/bawah tetap akan muncul" - maka kita tetap mempertahankan perilaku berbasis scroll.
-        // Untuk memastikan bahwa elemen yang memiliki data-aos-loop="true" bisa terus memutar animasi saat di viewport,
-        // kita tambahkan observer agar ulang class AOS jika diperlukan. Namun library AOS modern sudah menangani once:false dengan baik.
-        // Karena ada permintaan "animasi AOS loop" secara eksplisit, dipastikan bahwa setiap kali elemen masuk viewport, animasi terpicu kembali.
-        // Dukungan data-aos-loop sebenarnya tidak resmi di AOS, tapi dengan once:false dan mirror:true, kita mendapatkan efek loop berdasarkan scroll.
-        console.log('AOS initialized with loop effect (scroll up/down triggers animations again)');
     
     (function() {
-    // 1. CEK INSPECT ELEMENT (F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U)
     function disableInspect() {
-        // Cegah klik kanan
         document.addEventListener('contextmenu', function(e) {
             e.preventDefault();
             return false;
         });
         
-        // Cegah shortcut keyboard inspect
         document.addEventListener('keydown', function(e) {
-            // F12
             if (e.key === 'F12') {
                 e.preventDefault();
                 return false;
             }
-            // Ctrl+Shift+I (Windows/Linux)
             if (e.ctrlKey && e.shiftKey && e.key === 'I') {
                 e.preventDefault();
                 return false;
             }
-            // Ctrl+Shift+J (Console)
             if (e.ctrlKey && e.shiftKey && e.key === 'J') {
                 e.preventDefault();
                 return false;
             }
-            // Ctrl+U (View Source)
             if (e.ctrlKey && e.key === 'u') {
                 e.preventDefault();
                 return false;
             }
-            // Ctrl+S (Save)
             if (e.ctrlKey && e.key === 's') {
                 e.preventDefault();
                 return false;
             }
-            // Ctrl+Shift+C (Inspect Element)
             if (e.ctrlKey && e.shiftKey && e.key === 'C') {
                 e.preventDefault();
                 return false;
@@ -361,9 +525,7 @@
         });
     }
     
-    // 2. CEGAH SAVE GAMBAR (drag & drop, save image as)
     function disableImageSaving() {
-        // Cegah drag image
         const images = document.querySelectorAll('img');
         images.forEach(img => {
             img.addEventListener('dragstart', function(e) {
@@ -374,13 +536,11 @@
                 e.preventDefault();
                 return false;
             });
-            // Nonaktifkan pointer events pada gambar agar tidak bisa klik kanan simpan
             img.style.userSelect = 'none';
             img.style.webkitUserSelect = 'none';
-            img.style.pointerEvents = 'auto'; // tetap bisa dilihat
+            img.style.pointerEvents = 'auto';
         });
         
-        // Cegah drag dari seluruh body
         document.body.addEventListener('dragstart', function(e) {
             if (e.target.tagName === 'IMG') {
                 e.preventDefault();
@@ -389,7 +549,6 @@
         });
     }
     
-    // 3. DETEKSI DEVTOOLS TERBUKA (silent - tanpa notifikasi)
     function detectDevTools() {
         let devtoolsOpen = false;
         const element = new Image();
@@ -397,8 +556,6 @@
         Object.defineProperty(element, 'id', {
             get: function() {
                 devtoolsOpen = true;
-                // Silent: tanpa alert/notifikasi, hanya redirect atau kosong
-                // Bisa diaktifkan redirect jika ingin, tapi dimatikan dulu
                 return '';
             }
         });
@@ -406,18 +563,13 @@
         setInterval(function() {
             devtoolsOpen = false;
             console.log(element);
-            console.clear(); // bersihkan console agar tidak berisik
+            console.clear();
             if (devtoolsOpen) {
-                // Silent: tidak melakukan apa-apa agar tidak mengganggu user
-                // Opsional: bisa arahkan ke blank page (aktifkan jika perlu)
-                // if (window.location.href !== 'about:blank') {
-                //     window.location.href = 'about:blank';
-                // }
+                // silent
             }
         }, 1000);
     }
     
-    // 4. CEK DEBUGGER STATEMENT (silent)
     function disableDebugger() {
         setInterval(function() {
             try {
@@ -426,51 +578,29 @@
                     debugger;
                     const end = Date.now();
                     if (end - start > 100) {
-                        // debugger terdeteksi, silent saja
+                        // debugger terdeteksi
                     }
                 })();
             } catch(e) {}
         }, 500);
     }
     
-    // 5. OVERRIDE CONSOLE METHODS (opsional, nonaktifkan log)
-    function disableConsole() {
-        if (!window.console) return;
-        const noop = function() {};
-        const methods = ['log', 'info', 'warn', 'error', 'debug', 'trace', 'table', 'group', 'groupCollapsed', 'groupEnd'];
-        methods.forEach(function(method) {
-            if (console[method]) {
-                console[method] = noop;
-            }
-        });
-    }
-    
-    // 6. CEK SELECTION & COPY (opsional - text masih bisa copy, hanya image & inspect)
     function disableSelection() {
-        // Nonaktifkan seleksi text secara default (optional)
-        // document.body.style.userSelect = 'none';
-        // document.body.style.webkitUserSelect = 'none';
-        // document.body.style.msUserSelect = 'none';
-        // Jika ingin text tetap bisa copy, komentar baris di atas
+        // Biarkan text masih bisa di-copy
     }
     
-    // 7. CEK ELEMEN DEVTOOLS DENGAN WIDTH/HEIGHT
     function detectDevToolsBySize() {
         setInterval(function() {
             const threshold = 160;
             const widthDiff = window.outerWidth - window.innerWidth;
             const heightDiff = window.outerHeight - window.innerHeight;
             if (widthDiff > threshold || heightDiff > threshold) {
-                // devtools terbuka, silent - tidak lakukan apa-apa
-                // bisa arahkan ke blank page jika perlu
-                // window.location.href = 'about:blank';
+                // silent
             }
         }, 1500);
     }
     
-    // 8. CEK APAKAH INNERHTML DI MODIFIKASI
     function preventDomInspection() {
-        // Override setter untuk atribut tertentu (optional)
         const originalAddEventListener = EventTarget.prototype.addEventListener;
         EventTarget.prototype.addEventListener = function(type, listener, options) {
             if (type === 'DOMNodeInserted' || type === 'DOMAttrModified') {
@@ -480,17 +610,14 @@
         };
     }
     
-    // 9. JALANKAN SEMUA PROTEKSI
     disableInspect();
     disableImageSaving();
     detectDevTools();
     disableDebugger();
-    // disableConsole(); // Hapus komentar jika ingin nonaktifkan console.log sepenuhnya
     disableSelection();
     detectDevToolsBySize();
     preventDomInspection();
     
-    // 10. PROTEKSI TAMBAHAN: CEK KETIKA INSPECT MENCoba akses element
     Object.freeze(document);
     try {
         Object.defineProperty(window, 'outerHeight', {
@@ -501,32 +628,27 @@
         });
     } catch(e) {}
     
-    // 11. CEK jQuery (jika ada) amankan juga
     if (typeof jQuery !== 'undefined') {
         jQuery.fn.init.prototype.html = function() {
             return '';
         };
     }
     
-    // 12. CEK MOUSE MIDDLE CLICK (prevent view source)
     document.addEventListener('auxclick', function(e) {
-        if (e.button === 1) { // middle click
+        if (e.button === 1) {
             e.preventDefault();
             return false;
         }
     });
     
-    // 13. HAPUS NODE.JS GLOBAL VARIABLE
     delete window.process;
     delete window.require;
     delete window.global;
     
-    // 14. CEK PDF GENERATOR / PRINT (jika user print page)
     window.addEventListener('beforeprint', function() {
-        window.location.reload(); // silent, reload saat print
+        window.location.reload();
     });
     
-    // 15. PASTIKAN TIDAK BISA SAVE VIA DRAG FILE
     window.addEventListener('dragover', function(e) {
         e.preventDefault();
         return false;
@@ -536,13 +658,11 @@
         return false;
     });
     
-    // 16. PSEUDO: Hapus riwayat console.log sebelumnya (refresh console)
     setInterval(function() {
         if (typeof console !== 'undefined' && console.clear) {
             console.clear();
         }
     }, 200);
-    
 })();
 </script>
 </body>
