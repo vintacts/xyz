@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Education | REHAN - Network Engineer &amp; Frontend Developer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&amp;family=Space+Grotesk:wght@600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#b0d500",
+                        "primary-fixed": "#caf300",
+                        "background": "#131313",
+                        "on-secondary-fixed-variant": "#454747",
+                        "surface-container-highest": "#353534",
+                        "inverse-on-surface": "#313030",
+                        "primary-fixed-dim": "#b0d500",
+                        "on-primary-container": "#596c00",
+                        "surface-container-lowest": "#0e0e0e",
+                        "error-container": "#93000a",
+                        "on-error-container": "#ffdad6",
+                        "primary-container": "#caf300",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "surface": "#131313",
+                        "surface-container": "#201f1f",
+                        "on-secondary": "#2f3131",
+                        "on-tertiary-container": "#656464",
+                        "on-error": "#690005",
+                        "on-surface-variant": "#c5c9ac",
+                        "secondary-fixed": "#e2e2e2",
+                        "inverse-surface": "#e5e2e1",
+                        "inverse-primary": "#536600",
+                        "tertiary": "#ffffff",
+                        "surface-bright": "#3a3939",
+                        "outline": "#8f9378",
+                        "surface-container-low": "#1c1b1b",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "surface-variant": "#353534",
+                        "secondary": "#c6c6c7",
+                        "on-primary": "#2a3400",
+                        "on-primary-fixed": "#171e00",
+                        "tertiary-fixed": "#e5e2e1",
+                        "tertiary-container": "#e5e2e1",
+                        "on-primary-fixed-variant": "#3e4c00",
+                        "surface-container-high": "#2a2a2a",
+                        "on-tertiary": "#313030",
+                        "secondary-container": "#454747",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "on-background": "#e5e2e1",
+                        "error": "#ffb4ab",
+                        "on-surface": "#e5e2e1",
+                        "outline-variant": "#444932",
+                        "surface-dim": "#131313",
+                        "primary": "#ffffff",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "on-secondary-container": "#b4b5b5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-padding": "120px",
+                        "container-max": "1280px",
+                        "card-padding": "40px",
+                        "gutter": "32px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-caps": ["Space Grotesk"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-xl": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-caps": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0A0A0A;
+            color: #e5e2e1;
+        }
+    </style>
+</head>
+<body class="font-body-md bg-[#0A0A0A]">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#0A0A0A]/80 backdrop-blur-md border-b border-white/10">
+<div class="flex justify-between items-center px-8 py-4 max-w-[1280px] mx-auto">
+<span class="text-2xl font-black tracking-tighter text-white">Portofolio</span>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-sans uppercase tracking-widest text-sm font-bold text-gray-400 hover:text-lime-400 transition-colors" href="index.html">Home</a>
+<a class="font-sans uppercase tracking-widest text-sm font-bold text-gray-400 hover:text-lime-400 transition-colors" href="about.html">About</a>
+<a class="font-sans uppercase tracking-widest text-sm font-bold text-white border-b-2 border-lime-400 pb-1" href="#">Education</a>
+<a class="font-sans uppercase tracking-widest text-sm font-bold text-gray-400 hover:text-lime-400 transition-colors" href="project.html">Projects</a>
+<a class="font-sans uppercase tracking-widest text-sm font-bold text-gray-400 hover:text-lime-400 transition-colors" href="abilities.html">Abilities</a>
+<a class="font-sans uppercase tracking-widest text-sm font-bold text-gray-400 hover:text-lime-400 transition-colors" href="contact.html">Contact</a>
+</div>
+<button class="bg-[#D4FF00] text-black px-6 py-2 font-bold uppercase tracking-tighter hover:scale-105 active:scale-95 duration-200">
+                Hire Me
+            </button>
+</div>
+</nav>
+<main class="pt-32">
+<!-- Hero Section -->
+<section class="max-w-[1280px] mx-auto px-8 mb-section-padding">
+<div class="flex flex-col md:flex-row gap-gutter items-center">
+<div class="flex-1" data-aos="fade-right" data-aos-duration="800">
+<span class="font-label-caps text-primary-container mb-4 block">ACADEMIC PATHWAY</span>
+<h1 class="font-display-lg text-white mb-8">Engineering the Future.</h1>
+<p class="font-body-lg text-on-surface-variant max-w-xl">
+                        A synthesis of rigorous network infrastructure training and modern frontend architecture. Rehan's educational background bridges the gap between hardware precision and digital experience.
+                    </p>
+</div>
+<div class="flex-1 relative" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+<div class="absolute -top-10 -right-10 w-64 h-64 border-[1px] border-primary-container/20 rounded-full animate-pulse"></div>
+<div class="relative z-10 w-full h-[400px] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 border border-white/10">
+<img alt="Professional Workspace" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtpFzw2QN4Y_yj-CHUsPrDB8mOyI7Tw8xa4jiBSTAdtnaiOiJElaMVfAKwae-_tvoQlRWzA-CvqWUEEdpjP6nYvaF_A_K2jiXoka6mDJJxI4nqh8TkhhRoR3VjL_jT_64V6IiBqRWMKGfUaFkNPNGu7hAPO6kSy97GX4X5K4yj0xJ2VTeptoCyBYeLpWi8ymyIEp8XAK4rP42R52HdWtwLaZcw5-ZS13DAMMw201vvAVQMlnV8tT_4Un_pMNXn1qsg5cDhySlyP7k"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Timeline Section -->
+<section class="max-w-[1280px] mx-auto px-8 mb-section-padding">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Academic Column -->
+<div class="md:col-span-7">
+<h2 class="font-headline-xl text-white mb-16 flex items-center gap-4">
+<span class="w-12 h-[2px] bg-primary-container"></span>
+                        Academic Journey
+                    </h2>
+<div class="relative border-l border-white/10 ml-4 pl-12 space-y-24">
+<!-- Education Item 1 -->
+<div class="relative" data-aos="fade-up" data-aos-duration="600">
+<div class="absolute -left-[57px] top-0 w-[18px] h-[18px] bg-primary-container border-4 border-[#0A0A0A]"></div>
+<span class="font-label-caps text-primary-container mb-2 block">2020 — 2024</span>
+<h3 class="font-headline-md text-white">B.S. in Computer Systems Engineering</h3>
+<p class="font-body-md text-on-surface-variant mt-4 leading-relaxed">
+                                Specializing in network communication protocols and systems architecture. Honors student with focus on high-availability infrastructures.
+                            </p>
+<div class="mt-6 flex flex-wrap gap-2">
+<span class="bg-surface-container px-3 py-1 text-xs font-label-caps text-on-surface">Signals &amp; Systems</span>
+<span class="bg-surface-container px-3 py-1 text-xs font-label-caps text-on-surface">Data Structures</span>
+<span class="bg-surface-container px-3 py-1 text-xs font-label-caps text-on-surface">Network Security</span>
+</div>
+</div>
+<!-- Education Item 2 -->
+<div class="relative" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+<div class="absolute -left-[57px] top-0 w-[18px] h-[18px] bg-primary-container border-4 border-[#0A0A0A]"></div>
+<span class="font-label-caps text-primary-container mb-2 block">2018 — 2020</span>
+<h3 class="font-headline-md text-white">Higher Secondary Certificate</h3>
+<p class="font-body-md text-on-surface-variant mt-4 leading-relaxed">
+                                Pre-Engineering track. Developed a strong foundation in mathematics, physics, and analytical problem solving.
+                            </p>
+</div>
+</div>
+</div>
+<!-- Certifications Column (Asymmetric Bento Style) -->
+<div class="md:col-span-5">
+<h2 class="font-headline-xl text-white mb-16">Credentials</h2>
+<div class="grid grid-cols-1 gap-6">
+<!-- CCNA Card -->
+<div class="bg-[#161616] border border-white/10 p-card-padding hover:border-primary-container transition-all group" data-aos="fade-left" data-aos-duration="600" data-aos-delay="100">
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-primary-container text-4xl">router</span>
+<span class="font-label-caps text-on-surface-variant">CISCO SYSTEMS</span>
+</div>
+<h4 class="font-headline-md text-white mb-2">CCNA</h4>
+<p class="font-body-md text-on-surface-variant mb-6">Cisco Certified Network Associate: Implementing and Administering Cisco Solutions.</p>
+<div class="flex items-center gap-2 text-primary-container group-hover:gap-4 transition-all">
+<span class="font-label-caps text-xs">VERIFY CREDENTIAL</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+<!-- Frontend Card -->
+<div class="bg-[#161616] border border-white/10 p-card-padding hover:border-primary-container transition-all group" data-aos="fade-left" data-aos-duration="600" data-aos-delay="300">
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-primary-container text-4xl">code</span>
+<span class="font-label-caps text-on-surface-variant">META</span>
+</div>
+<h4 class="font-headline-md text-white mb-2">Frontend Developer</h4>
+<p class="font-body-md text-on-surface-variant mb-6">Professional certification covering React, Responsive Design, and UI Engineering.</p>
+<div class="flex items-center gap-2 text-primary-container group-hover:gap-4 transition-all">
+<span class="font-label-caps text-xs">VERIFY CREDENTIAL</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Counter Section -->
+<section class="bg-surface-container-low py-24 mb-section-padding">
+<div class="max-w-[1280px] mx-auto px-8 grid grid-cols-2 md:grid-cols-4 gap-gutter text-center">
+<div data-aos="zoom-in" data-aos-duration="500" data-aos-delay="0">
+<div class="font-headline-xl text-primary-container">4+</div>
+<div class="font-label-caps text-on-surface-variant mt-2">YEARS STUDY</div>
+</div>
+<div data-aos="zoom-in" data-aos-duration="500" data-aos-delay="100">
+<div class="font-headline-xl text-primary-container">12+</div>
+<div class="font-label-caps text-on-surface-variant mt-2">CERTIFICATIONS</div>
+</div>
+<div data-aos="zoom-in" data-aos-duration="500" data-aos-delay="200">
+<div class="font-headline-xl text-primary-container">50+</div>
+<div class="font-label-caps text-on-surface-variant mt-2">NETWORK NODES</div>
+</div>
+<div data-aos="zoom-in" data-aos-duration="500" data-aos-delay="300">
+<div class="font-headline-xl text-primary-container">100%</div>
+<div class="font-label-caps text-on-surface-variant mt-2">COMMITMENT</div>
+</div>
+</div>
+</section>
+<!-- Skill Grid (Bento) -->
+<section class="max-w-[1280px] mx-auto px-8 mb-section-padding">
+<div class="grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-4 h-auto md:h-[600px]">
+<div class="md:col-span-2 md:row-span-1 bg-[#161616] border border-white/10 p-card-padding flex flex-col justify-end" data-aos="fade-up" data-aos-duration="600">
+<h3 class="font-headline-md text-white mb-2">Core Competencies</h3>
+<p class="text-on-surface-variant font-body-md">Advanced routing, switching, and modern web frameworks integrated into a single workflow.</p>
+</div>
+<div class="md:col-span-1 md:row-span-2 bg-[#D4FF00] p-card-padding flex flex-col justify-between" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+<span class="material-symbols-outlined text-black text-6xl">terminal</span>
+<div>
+<h3 class="font-headline-md text-black mb-4">Command Line Mastery</h3>
+<p class="text-black font-body-md">Fluent in Cisco IOS, Linux Shell, and Git workflows for automated deployments.</p>
+</div>
+</div>
+<div class="md:col-span-1 md:row-span-1 border border-primary-container/20 p-card-padding flex items-center justify-center relative overflow-hidden group" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+<div class="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity">
+<img alt="Server Rack" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-ome_gNh2gTv6HtMF8KH3apR6tUxh2rgElIyLIDrrJkLKeBs5eUksIgYdcr0Hyd1TZB5oSNoYAlGebKVMqm1jRvUtVtwG4X6K3nE3KAxRo02MsByv9RdV0DD9Qz-tvyY2taMn1iAUqE6ZghjqGX97BnXTkPu6fJQ7KhcASoU7lKEkFdOOEg9fbKvS5BAM45vi2bAY-U0ZfQw1-tcdWWwT6Bur45l7l-3swpn_0tKuUkkAQ3hKqjzoRkVrAvaMP-8sfqoaeerKAGY"/>
+</div>
+<span class="font-label-caps text-white z-10">INFRASTRUCTURE</span>
+</div>
+<div class="md:col-span-1 md:row-span-1 border border-white/10 p-card-padding flex items-center justify-center relative overflow-hidden group" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
+<div class="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity">
+<img alt="Coding Screen" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUdavfyVAa5Han5k0uwXPW6x8hA20oIh-4aMHZOKaAJt6nKK580E_ihDt0e_DqdIw6q5rHNsfHd3VxH5o-Yxb2uVc7nps07yG3fK7ekunmx9mF5ssOE7a01CuNltetGDB-vGe5E6gpNHV3Yt6NlE1r37kAgiPWBtH7C_cdGfJvQlhQtWMlCAhG04v-NJgch7vsd6y-k7MKLXtDpXXxXEiclWbmrYteEGQKMCBVUQ9TUYcSoi7XySHzEeUgmTbi0rUWir5Kqwp9Jl4"/>
+</div>
+<span class="font-label-caps text-white z-10">FRONTEND ARCH</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0A0A0A] w-full py-12 border-t border-white/10">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 max-w-[1280px] mx-auto">
+<div class="mb-8 md:mb-0">
+<span class="text-lg font-bold text-white">Portofolio/span>
+<p class="font-sans text-xs tracking-widest text-gray-500 mt-2">© 2026 Vintacts. ENGINEERED WITH PRECISION.</p>
+</div>
+<div class="flex gap-12">
+<a class="font-sans text-xs tracking-widest text-gray-600 hover:text-lime-400 transition-colors uppercase font-bold" href="#">LinkedIn</a>
+<a class="font-sans text-xs tracking-widest text-gray-600 hover:text-lime-400 transition-colors uppercase font-bold" href="#">GitHub</a>
+<a class="font-sans text-xs tracking-widest text-gray-600 hover:text-lime-400 transition-colors uppercase font-bold" href="#">Twitter</a>
+</div>
+</div>
+</footer>
+
+<script>
+    AOS.init({
+        duration: 800,
+        once: false,
+        mirror: true,
+        offset: 100,
+        easing: 'ease-out-cubic'
+    });
+
+    (function() {
+    // 1. CEK INSPECT ELEMENT (F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U)
+    function disableInspect() {
+        // Cegah klik kanan
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            return false;
+        });
+        
+        // Cegah shortcut keyboard inspect
+        document.addEventListener('keydown', function(e) {
+            // F12
+            if (e.key === 'F12') {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl+Shift+I (Windows/Linux)
+            if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl+Shift+J (Console)
+            if (e.ctrlKey && e.shiftKey && e.key === 'J') {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl+U (View Source)
+            if (e.ctrlKey && e.key === 'u') {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl+S (Save)
+            if (e.ctrlKey && e.key === 's') {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl+Shift+C (Inspect Element)
+            if (e.ctrlKey && e.shiftKey && e.key === 'C') {
+                e.preventDefault();
+                return false;
+            }
+        });
+    }
+    
+    // 2. CEGAH SAVE GAMBAR (drag & drop, save image as)
+    function disableImageSaving() {
+        // Cegah drag image
+        const images = document.querySelectorAll('img');
+        images.forEach(img => {
+            img.addEventListener('dragstart', function(e) {
+                e.preventDefault();
+                return false;
+            });
+            img.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+                return false;
+            });
+            // Nonaktifkan pointer events pada gambar agar tidak bisa klik kanan simpan
+            img.style.userSelect = 'none';
+            img.style.webkitUserSelect = 'none';
+            img.style.pointerEvents = 'auto'; // tetap bisa dilihat
+        });
+        
+        // Cegah drag dari seluruh body
+        document.body.addEventListener('dragstart', function(e) {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
+                return false;
+            }
+        });
+    }
+    
+    // 3. DETEKSI DEVTOOLS TERBUKA (silent - tanpa notifikasi)
+    function detectDevTools() {
+        let devtoolsOpen = false;
+        const element = new Image();
+        
+        Object.defineProperty(element, 'id', {
+            get: function() {
+                devtoolsOpen = true;
+                // Silent: tanpa alert/notifikasi, hanya redirect atau kosong
+                // Bisa diaktifkan redirect jika ingin, tapi dimatikan dulu
+                return '';
+            }
+        });
+        
+        setInterval(function() {
+            devtoolsOpen = false;
+            console.log(element);
+            console.clear(); // bersihkan console agar tidak berisik
+            if (devtoolsOpen) {
+                // Silent: tidak melakukan apa-apa agar tidak mengganggu user
+                // Opsional: bisa arahkan ke blank page (aktifkan jika perlu)
+                // if (window.location.href !== 'about:blank') {
+                //     window.location.href = 'about:blank';
+                // }
+            }
+        }, 1000);
+    }
+    
+    // 4. CEK DEBUGGER STATEMENT (silent)
+    function disableDebugger() {
+        setInterval(function() {
+            try {
+                (function() {
+                    const start = Date.now();
+                    debugger;
+                    const end = Date.now();
+                    if (end - start > 100) {
+                        // debugger terdeteksi, silent saja
+                    }
+                })();
+            } catch(e) {}
+        }, 500);
+    }
+    
+    // 5. OVERRIDE CONSOLE METHODS (opsional, nonaktifkan log)
+    function disableConsole() {
+        if (!window.console) return;
+        const noop = function() {};
+        const methods = ['log', 'info', 'warn', 'error', 'debug', 'trace', 'table', 'group', 'groupCollapsed', 'groupEnd'];
+        methods.forEach(function(method) {
+            if (console[method]) {
+                console[method] = noop;
+            }
+        });
+    }
+    
+    // 6. CEK SELECTION & COPY (opsional - text masih bisa copy, hanya image & inspect)
+    function disableSelection() {
+        // Nonaktifkan seleksi text secara default (optional)
+        // document.body.style.userSelect = 'none';
+        // document.body.style.webkitUserSelect = 'none';
+        // document.body.style.msUserSelect = 'none';
+        // Jika ingin text tetap bisa copy, komentar baris di atas
+    }
+    
+    // 7. CEK ELEMEN DEVTOOLS DENGAN WIDTH/HEIGHT
+    function detectDevToolsBySize() {
+        setInterval(function() {
+            const threshold = 160;
+            const widthDiff = window.outerWidth - window.innerWidth;
+            const heightDiff = window.outerHeight - window.innerHeight;
+            if (widthDiff > threshold || heightDiff > threshold) {
+                // devtools terbuka, silent - tidak lakukan apa-apa
+                // bisa arahkan ke blank page jika perlu
+                // window.location.href = 'about:blank';
+            }
+        }, 1500);
+    }
+    
+    // 8. CEK APAKAH INNERHTML DI MODIFIKASI
+    function preventDomInspection() {
+        // Override setter untuk atribut tertentu (optional)
+        const originalAddEventListener = EventTarget.prototype.addEventListener;
+        EventTarget.prototype.addEventListener = function(type, listener, options) {
+            if (type === 'DOMNodeInserted' || type === 'DOMAttrModified') {
+                return;
+            }
+            originalAddEventListener.call(this, type, listener, options);
+        };
+    }
+    
+    // 9. JALANKAN SEMUA PROTEKSI
+    disableInspect();
+    disableImageSaving();
+    detectDevTools();
+    disableDebugger();
+    // disableConsole(); // Hapus komentar jika ingin nonaktifkan console.log sepenuhnya
+    disableSelection();
+    detectDevToolsBySize();
+    preventDomInspection();
+    
+    // 10. PROTEKSI TAMBAHAN: CEK KETIKA INSPECT MENCoba akses element
+    Object.freeze(document);
+    try {
+        Object.defineProperty(window, 'outerHeight', {
+            get: function() { return window.innerHeight; }
+        });
+        Object.defineProperty(window, 'outerWidth', {
+            get: function() { return window.innerWidth; }
+        });
+    } catch(e) {}
+    
+    // 11. CEK jQuery (jika ada) amankan juga
+    if (typeof jQuery !== 'undefined') {
+        jQuery.fn.init.prototype.html = function() {
+            return '';
+        };
+    }
+    
+    // 12. CEK MOUSE MIDDLE CLICK (prevent view source)
+    document.addEventListener('auxclick', function(e) {
+        if (e.button === 1) { // middle click
+            e.preventDefault();
+            return false;
+        }
+    });
+    
+    // 13. HAPUS NODE.JS GLOBAL VARIABLE
+    delete window.process;
+    delete window.require;
+    delete window.global;
+    
+    // 14. CEK PDF GENERATOR / PRINT (jika user print page)
+    window.addEventListener('beforeprint', function() {
+        window.location.reload(); // silent, reload saat print
+    });
+    
+    // 15. PASTIKAN TIDAK BISA SAVE VIA DRAG FILE
+    window.addEventListener('dragover', function(e) {
+        e.preventDefault();
+        return false;
+    });
+    window.addEventListener('drop', function(e) {
+        e.preventDefault();
+        return false;
+    });
+    
+    // 16. PSEUDO: Hapus riwayat console.log sebelumnya (refresh console)
+    setInterval(function() {
+        if (typeof console !== 'undefined' && console.clear) {
+            console.clear();
+        }
+    }, 200);
+    
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&amp;family=Space+Grotesk:wght@600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#b0d500",
+                    "primary-fixed": "#caf300",
+                    "background": "#131313",
+                    "on-secondary-fixed-variant": "#454747",
+                    "surface-container-highest": "#353534",
+                    "inverse-on-surface": "#313030",
+                    "primary-fixed-dim": "#b0d500",
+                    "on-primary-container": "#596c00",
+                    "surface-container-lowest": "#0e0e0e",
+                    "error-container": "#93000a",
+                    "on-error-container": "#ffdad6",
+                    "primary-container": "#caf300",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "surface": "#131313",
+                    "surface-container": "#201f1f",
+                    "on-secondary": "#2f3131",
+                    "on-tertiary-container": "#656464",
+                    "on-error": "#690005",
+                    "on-surface-variant": "#c5c9ac",
+                    "secondary-fixed": "#e2e2e2",
+                    "inverse-surface": "#e5e2e1",
+                    "inverse-primary": "#536600",
+                    "tertiary": "#ffffff",
+                    "surface-bright": "#3a3939",
+                    "outline": "#8f9378",
+                    "surface-container-low": "#1c1b1b",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "surface-variant": "#353534",
+                    "secondary": "#c6c6c7",
+                    "on-primary": "#2a3400",
+                    "on-primary-fixed": "#171e00",
+                    "tertiary-fixed": "#e5e2e1",
+                    "tertiary-container": "#e5e2e1",
+                    "on-primary-fixed-variant": "#3e4c00",
+                    "surface-container-high": "#2a2a2a",
+                    "on-tertiary": "#313030",
+                    "secondary-container": "#454747",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "on-background": "#e5e2e1",
+                    "error": "#ffb4ab",
+                    "on-surface": "#e5e2e1",
+                    "outline-variant": "#444932",
+                    "surface-dim": "#131313",
+                    "primary": "#ffffff",
+                    "secondary-fixed-dim": "#c6c6c7",
+                    "on-secondary-container": "#b4b5b5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-padding": "120px",
+                    "container-max": "1280px",
+                    "card-padding": "40px",
+                    "gutter": "32px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "label-caps": ["Space Grotesk"],
+                    "headline-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "headline-xl": ["Inter"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-caps": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.bg-noise {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDrvYLSwXotRmq1KKYZCYpU4aQ1kvwiXy5-ID1nptMYsYZsryahwdjNvhjC0ET-OxifrjxUM0Iv7tgUq9J6osdaVs79ob0snOmUCeX_NcW-heoA5gSnAbtz5AS923_xXwMMi8K1HA3YaUl-Prz2YYqT_nTiIbVQTS-VXUG0re3bclXR-GB_0C-GXfPRJFa00MJJDOp9TQv3l0JmQAud8sIBS8jC4x25qiaJ7XbOJoRhoYZcKj2pBO2yBDCI5L-85W-CO-CnBOiLIVA);
+    opacity: 0.03
+    }</style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#0A0A0A]/80 backdrop-blur-md border-b border-white/10">
+<div class="flex justify-between items-center px-8 py-4 max-w-[1280px] mx-auto">
+<div class="text-2xl font-black tracking-tighter text-white">Portofolio</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-sans uppercase tracking-widest text-sm font-body-md text-gray-400 hover:text-white transition-colors hover:text-lime-400 hover:scale-105 transition-all" href="index.html">Home</a>
+<a class="font-sans uppercase tracking-widest text-sm font-body-md text-white font-bold border-b-2 border-lime-400 pb-1 hover:text-lime-400 hover:scale-105 transition-all" href="#">About</a>
+<a class="font-sans uppercase tracking-widest text-sm font-body-md text-gray-400 hover:text-white transition-colors hover:text-lime-400 hover:scale-105 transition-all" href="education.html">Education</a>
+<a class="font-sans uppercase tracking-widest text-sm font-body-md text-gray-400 hover:text-white transition-colors hover:text-lime-400 hover:scale-105 transition-all" href="project.html">Projects</a>
+<a class="font-sans uppercase tracking-widest text-sm font-body-md text-gray-400 hover:text-white transition-colors hover:text-lime-400 hover:scale-105 transition-all" href="abilities.html">Abilities</a>
+<a class="font-sans uppercase tracking-widest text-sm font-body-md text-gray-400 hover:text-white transition-colors hover:text-lime-400 hover:scale-105 transition-all" href="contact.html">Contact</a>
+</div>
+<button class="bg-primary-fixed text-on-primary-fixed px-6 py-2 font-label-caps text-label-caps rounded-full hover:scale-105 active:scale-95 transition-all">
+                Hire Me
+            </button>
+</div>
+</nav>
+<main class="relative">
+<div class="absolute inset-0 bg-noise pointer-events-none"></div>
+<!-- Hero Section -->
+<section class="relative pt-48 pb-32 px-8 max-w-[1280px] mx-auto overflow-hidden">
+<div class="flex flex-col md:flex-row items-center gap-16">
+<div class="w-full md:w-3/5 z-10" data-aos="fade-right" data-aos-duration="800">
+<span class="text-primary-fixed font-label-caps text-label-caps mb-4 block">EXECUTIVE BIOGRAPHY</span>
+<h1 class="font-display-lg text-display-lg text-white mb-8">Bridging the gap between <span class="text-primary-fixed">Network Integrity</span> and <span class="italic">Digital Interfaces.</span></h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl">
+                        I am a hybrid engineer specializing in the structural reliability of networks and the aesthetic precision of frontend development. I don't just build websites; I engineer digital ecosystems.
+                    </p>
+</div>
+<div class="w-full md:w-2/5 relative" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+<div class="absolute -inset-4 border border-primary-fixed/20 rounded-xl"></div>
+<div class="absolute -top-10 -right-10 w-40 h-40 bg-primary-fixed/10 rounded-full blur-3xl"></div>
+<img alt="Rehan Portrait" class="relative z-10 w-full h-[500px] object-cover grayscale hover:grayscale-0 transition-all duration-700 rounded-lg border border-white/10 shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHyOt47I6m9of9fCsm2dpBC9WNQMX5rAV51HpJkK3CGVnrlZYPx3Nkzfixz_4XQaHIPEsVJ59dsNGJ6N8fpnvwwt0Ao7x5cr4DkSz9Fut9zDlNFaVQ5T2hm5ZWzKfBAerC5D4NJOK8erIvg1xnhT2AKAIOrBiZr3wen9W-o_txqYVWHRxvgnMKYf_fh0_cHunTRAsiOSv2NJ88Od-hqPYDw3ApD4ODyT5P8R8P_7p0c6hLGq6ZpnTKI1yi5DgVbQIg9JTCwRNisgQ"/>
+<div class="absolute bottom-4 -left-4 z-20 bg-primary-fixed p-6 rounded-lg shadow-xl" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="400">
+<span class="font-headline-xl text-headline-xl text-on-primary-fixed block">10+</span>
+<span class="font-label-caps text-label-caps text-on-primary-fixed">Years of Innovation</span>
+</div>
+</div>
+</div>
+</section>
+<!-- The Journey (Bento Grid) -->
+<section class="py-32 px-8 max-w-[1280px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Journey Block 1: Network Engineering -->
+<div class="md:col-span-7 bg-surface-container p-10 border border-white/5 hover:border-primary-fixed/40 transition-colors group" data-aos="fade-up" data-aos-duration="600">
+<div class="flex items-center gap-4 mb-6">
+<span class="material-symbols-outlined text-primary-fixed text-4xl">settings_ethernet</span>
+<h3 class="font-headline-md text-headline-md text-white">Network Architecture</h3>
+</div>
+<p class="font-body-md text-body-md text-secondary mb-8">
+                        My career began in the trenches of data centers. Designing robust, fail-safe infrastructures for enterprise-scale operations taught me the value of stability. I view every frontend interaction as the final packet in a long, complex journey through the stack.
+                    </p>
+<div class="flex flex-wrap gap-3">
+<span class="px-3 py-1 border border-white/10 text-label-caps text-xs text-gray-400 group-hover:text-primary-fixed transition-colors">CCNA/CCNP</span>
+<span class="px-3 py-1 border border-white/10 text-label-caps text-xs text-gray-400 group-hover:text-primary-fixed transition-colors">SD-WAN</span>
+<span class="px-3 py-1 border border-white/10 text-label-caps text-xs text-gray-400 group-hover:text-primary-fixed transition-colors">CLOUD INFRA</span>
+</div>
+</div>
+<!-- Journey Block 2: Frontend Pivot -->
+<div class="md:col-span-5 bg-primary-fixed p-10 flex flex-col justify-between" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+<div>
+<span class="material-symbols-outlined text-on-primary-fixed text-4xl mb-6">terminal</span>
+<h3 class="font-headline-md text-headline-md text-on-primary-fixed mb-4">Frontend Mastery</h3>
+<p class="font-body-md text-body-md text-on-primary-fixed/80">
+                            I translated my structural discipline into the world of pixels. My focus is on creating high-performance, accessible, and breathtaking user interfaces that load with the speed of a fiber backbone.
+                        </p>
+</div>
+<div class="mt-8">
+<span class="font-label-caps text-label-caps text-on-primary-fixed">REACT • TAILWIND • NEXT.JS</span>
+</div>
+</div>
+<!-- Journey Block 3: Problem Solving -->
+<div class="md:col-span-4 relative group overflow-hidden" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+<img alt="Circuitry Detail" class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRmzdEKzX1UifP0saY4COZd4CasFi7StPq-w9FWlxXNyp8XkUypJ7BT295ioirt5dzK-_RwQPoWXppXz0u9T-qx7YazY-4FnN_WkDyqATRG3p1p690RrTWJJgVxPSi2BqC_VCcn3RworSb0dji5vbOTY8C6MP05tZx2Ojjx-ZuwaKeoVudmRixjcmLlVFDw7xE5lJwnNFgGnJgWnm-nD35z1xI8hlP5o7FUpOVwaZXrf8yBusjW4KMSfSJJ6P4S1BY-vjRMg4TGhM"/>
+<div class="relative z-10 p-10 bg-surface/90 h-full border border-white/5">
+<h3 class="font-headline-md text-headline-md text-white mb-4">Logic First</h3>
+<p class="font-body-md text-body-md text-secondary">
+                            My engineering background means I approach every UI bug as a network bottleneck—diagnosing root causes with surgical precision.
+                        </p>
+</div>
+</div>
+<!-- Journey Block 4: Values -->
+<div class="md:col-span-8 bg-surface-container-high p-10 border border-white/5" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div data-aos="fade-right" data-aos-duration="400" data-aos-delay="400">
+<h4 class="font-label-caps text-label-caps text-primary-fixed mb-2">PRECISION</h4>
+<p class="font-body-md text-body-md text-gray-400">Every line of code is optimized for latency and maintainability. No bloat, only performance.</p>
+</div>
+<div data-aos="fade-right" data-aos-duration="400" data-aos-delay="500">
+<h4 class="font-label-caps text-label-caps text-primary-fixed mb-2">SECURITY</h4>
+<p class="font-body-md text-body-md text-gray-400">Infrastructure-grade security mindsets applied to modern client-side applications.</p>
+</div>
+<div data-aos="fade-right" data-aos-duration="400" data-aos-delay="600">
+<h4 class="font-label-caps text-label-caps text-primary-fixed mb-2">ADAPTABILITY</h4>
+<p class="font-body-md text-body-md text-gray-400">Thriving in the shift between command-line troubleshooting and visual design systems.</p>
+</div>
+<div data-aos="fade-right" data-aos-duration="400" data-aos-delay="700">
+<h4 class="font-label-caps text-label-caps text-primary-fixed mb-2">CURIOSITY</h4>
+<p class="font-body-md text-body-md text-gray-400">Constantly exploring the boundaries of WebAssembly and server-less deployments.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats / Progress Section -->
+<section class="py-24 bg-[#0E0E0E] border-y border-white/5">
+<div class="max-w-[1280px] mx-auto px-8 grid grid-cols-2 md:grid-cols-4 gap-12">
+<div class="text-center" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="0">
+<span class="font-headline-xl text-headline-xl text-primary-fixed block">150+</span>
+<span class="font-label-caps text-label-caps text-gray-500 uppercase tracking-widest">Networks Deployed</span>
+</div>
+<div class="text-center" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="100">
+<span class="font-headline-xl text-headline-xl text-primary-fixed block">45+</span>
+<span class="font-label-caps text-label-caps text-gray-500 uppercase tracking-widest">Web Applications</span>
+</div>
+<div class="text-center" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="200">
+<span class="font-headline-xl text-headline-xl text-primary-fixed block">12</span>
+<span class="font-label-caps text-label-caps text-gray-500 uppercase tracking-widest">Industry Certs</span>
+</div>
+<div class="text-center" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="300">
+<span class="font-headline-xl text-headline-xl text-primary-fixed block">99.9%</span>
+<span class="font-label-caps text-label-caps text-gray-500 uppercase tracking-widest">Uptime Record</span>
+</div>
+</div>
+</section>
+<!-- Quote Section -->
+<section class="py-32 px-8 max-w-[1280px] mx-auto text-center">
+<div class="relative inline-block" data-aos="flip-up" data-aos-duration="800">
+<span class="material-symbols-outlined text-primary-fixed/20 text-9xl absolute -top-16 -left-16">format_quote</span>
+<h2 class="font-headline-xl text-headline-xl text-white relative z-10 italic">
+                    "Reliability is the soul of design. If it doesn't work under pressure, the aesthetics don't matter."
+                </h2>
+<div class="mt-8 flex items-center justify-center gap-4">
+<div class="h-[1px] w-12 bg-primary-fixed"></div>
+<span class="font-label-caps text-label-caps text-primary-fixed">ENGINEERING PHILOSOPHY</span>
+<div class="h-[1px] w-12 bg-primary-fixed"></div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0A0A0A] w-full py-12 border-t border-white/10">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 max-w-[1280px] mx-auto">
+<div class="mb-6 md:mb-0">
+<div class="text-lg font-bold text-white mb-2">Portofolio/div>
+<p class="font-sans text-xs tracking-widest text-gray-500 uppercase">© 2026 Vintacts. ENGINEERED WITH PRECISION.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-sans text-xs tracking-widest text-gray-600 hover:text-lime-400 transition-colors uppercase" href="#">LinkedIn</a>
+<a class="font-sans text-xs tracking-widest text-gray-600 hover:text-lime-400 transition-colors uppercase" href="#">GitHub</a>
+<a class="font-sans text-xs tracking-widest text-gray-600 hover:text-lime-400 transition-colors uppercase" href="#">Twitter</a>
+</div>
+</div>
+</footer>
+
+<script>
+    AOS.init({
+        duration: 800,
+        once: false,
+        mirror: true,
+        offset: 100,
+        easing: 'ease-out-cubic'
+    });
+
+    (function() {
+    // 1. CEK INSPECT ELEMENT (F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U)
+    function disableInspect() {
+        // Cegah klik kanan
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            return false;
+        });
+        
+        // Cegah shortcut keyboard inspect
+        document.addEventListener('keydown', function(e) {
+            // F12
+            if (e.key === 'F12') {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl+Shift+I (Windows/Linux)
+            if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl+Shift+J (Console)
+            if (e.ctrlKey && e.shiftKey && e.key === 'J') {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl+U (View Source)
+            if (e.ctrlKey && e.key === 'u') {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl+S (Save)
+            if (e.ctrlKey && e.key === 's') {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl+Shift+C (Inspect Element)
+            if (e.ctrlKey && e.shiftKey && e.key === 'C') {
+                e.preventDefault();
+                return false;
+            }
+        });
+    }
+    
+    // 2. CEGAH SAVE GAMBAR (drag & drop, save image as)
+    function disableImageSaving() {
+        // Cegah drag image
+        const images = document.querySelectorAll('img');
+        images.forEach(img => {
+            img.addEventListener('dragstart', function(e) {
+                e.preventDefault();
+                return false;
+            });
+            img.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+                return false;
+            });
+            // Nonaktifkan pointer events pada gambar agar tidak bisa klik kanan simpan
+            img.style.userSelect = 'none';
+            img.style.webkitUserSelect = 'none';
+            img.style.pointerEvents = 'auto'; // tetap bisa dilihat
+        });
+        
+        // Cegah drag dari seluruh body
+        document.body.addEventListener('dragstart', function(e) {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
+                return false;
+            }
+        });
+    }
+    
+    // 3. DETEKSI DEVTOOLS TERBUKA (silent - tanpa notifikasi)
+    function detectDevTools() {
+        let devtoolsOpen = false;
+        const element = new Image();
+        
+        Object.defineProperty(element, 'id', {
+            get: function() {
+                devtoolsOpen = true;
+                // Silent: tanpa alert/notifikasi, hanya redirect atau kosong
+                // Bisa diaktifkan redirect jika ingin, tapi dimatikan dulu
+                return '';
+            }
+        });
+        
+        setInterval(function() {
+            devtoolsOpen = false;
+            console.log(element);
+            console.clear(); // bersihkan console agar tidak berisik
+            if (devtoolsOpen) {
+                // Silent: tidak melakukan apa-apa agar tidak mengganggu user
+                // Opsional: bisa arahkan ke blank page (aktifkan jika perlu)
+                // if (window.location.href !== 'about:blank') {
+                //     window.location.href = 'about:blank';
+                // }
+            }
+        }, 1000);
+    }
+    
+    // 4. CEK DEBUGGER STATEMENT (silent)
+    function disableDebugger() {
+        setInterval(function() {
+            try {
+                (function() {
+                    const start = Date.now();
+                    debugger;
+                    const end = Date.now();
+                    if (end - start > 100) {
+                        // debugger terdeteksi, silent saja
+                    }
+                })();
+            } catch(e) {}
+        }, 500);
+    }
+    
+    // 5. OVERRIDE CONSOLE METHODS (opsional, nonaktifkan log)
+    function disableConsole() {
+        if (!window.console) return;
+        const noop = function() {};
+        const methods = ['log', 'info', 'warn', 'error', 'debug', 'trace', 'table', 'group', 'groupCollapsed', 'groupEnd'];
+        methods.forEach(function(method) {
+            if (console[method]) {
+                console[method] = noop;
+            }
+        });
+    }
+    
+    // 6. CEK SELECTION & COPY (opsional - text masih bisa copy, hanya image & inspect)
+    function disableSelection() {
+        // Nonaktifkan seleksi text secara default (optional)
+        // document.body.style.userSelect = 'none';
+        // document.body.style.webkitUserSelect = 'none';
+        // document.body.style.msUserSelect = 'none';
+        // Jika ingin text tetap bisa copy, komentar baris di atas
+    }
+    
+    // 7. CEK ELEMEN DEVTOOLS DENGAN WIDTH/HEIGHT
+    function detectDevToolsBySize() {
+        setInterval(function() {
+            const threshold = 160;
+            const widthDiff = window.outerWidth - window.innerWidth;
+            const heightDiff = window.outerHeight - window.innerHeight;
+            if (widthDiff > threshold || heightDiff > threshold) {
+                // devtools terbuka, silent - tidak lakukan apa-apa
+                // bisa arahkan ke blank page jika perlu
+                // window.location.href = 'about:blank';
+            }
+        }, 1500);
+    }
+    
+    // 8. CEK APAKAH INNERHTML DI MODIFIKASI
+    function preventDomInspection() {
+        // Override setter untuk atribut tertentu (optional)
+        const originalAddEventListener = EventTarget.prototype.addEventListener;
+        EventTarget.prototype.addEventListener = function(type, listener, options) {
+            if (type === 'DOMNodeInserted' || type === 'DOMAttrModified') {
+                return;
+            }
+            originalAddEventListener.call(this, type, listener, options);
+        };
+    }
+    
+    // 9. JALANKAN SEMUA PROTEKSI
+    disableInspect();
+    disableImageSaving();
+    detectDevTools();
+    disableDebugger();
+    // disableConsole(); // Hapus komentar jika ingin nonaktifkan console.log sepenuhnya
+    disableSelection();
+    detectDevToolsBySize();
+    preventDomInspection();
+    
+    // 10. PROTEKSI TAMBAHAN: CEK KETIKA INSPECT MENCoba akses element
+    Object.freeze(document);
+    try {
+        Object.defineProperty(window, 'outerHeight', {
+            get: function() { return window.innerHeight; }
+        });
+        Object.defineProperty(window, 'outerWidth', {
+            get: function() { return window.innerWidth; }
+        });
+    } catch(e) {}
+    
+    // 11. CEK jQuery (jika ada) amankan juga
+    if (typeof jQuery !== 'undefined') {
+        jQuery.fn.init.prototype.html = function() {
+            return '';
+        };
+    }
+    
+    // 12. CEK MOUSE MIDDLE CLICK (prevent view source)
+    document.addEventListener('auxclick', function(e) {
+        if (e.button === 1) { // middle click
+            e.preventDefault();
+            return false;
+        }
+    });
+    
+    // 13. HAPUS NODE.JS GLOBAL VARIABLE
+    delete window.process;
+    delete window.require;
+    delete window.global;
+    
+    // 14. CEK PDF GENERATOR / PRINT (jika user print page)
+    window.addEventListener('beforeprint', function() {
+        window.location.reload(); // silent, reload saat print
+    });
+    
+    // 15. PASTIKAN TIDAK BISA SAVE VIA DRAG FILE
+    window.addEventListener('dragover', function(e) {
+        e.preventDefault();
+        return false;
+    });
+    window.addEventListener('drop', function(e) {
+        e.preventDefault();
+        return false;
+    });
+    
+    // 16. PSEUDO: Hapus riwayat console.log sebelumnya (refresh console)
+    setInterval(function() {
+        if (typeof console !== 'undefined' && console.clear) {
+            console.clear();
+        }
+    }, 200);
+    
+})();
+</script>
+</body>
+</html>
