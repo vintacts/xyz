@@ -100,7 +100,7 @@
             transform: scale(0.95);
         }
         
-        /* === RESPONSIVE FIXES UNTUK MOBILE (tanpa mengubah desktop) === */
+        /* === RESPONSIVE FIXES UNTUK MOBILE === */
         @media (max-width: 768px) {
             /* Header adjustments */
             header > div {
@@ -111,13 +111,6 @@
             }
             header > div > div:first-child {
                 font-size: 1.25rem !important;
-            }
-            header button {
-                padding-left: 1rem !important;
-                padding-right: 1rem !important;
-                padding-top: 0.5rem !important;
-                padding-bottom: 0.5rem !important;
-                font-size: 0.75rem !important;
             }
             
             /* Hero section */
@@ -168,7 +161,7 @@
             .grid.grid-cols-1.md\\:grid-cols-3 {
                 gap: 1rem !important;
             }
-            .bg-surface-container-low.p-card-padding {
+            .bg-surface-container-low.p-6 {
                 padding: 1.5rem !important;
             }
             .md\\:col-span-2 {
@@ -267,9 +260,20 @@
             .gap-gutter {
                 gap: 2rem !important;
             }
+            
+            /* Mobile menu panel */
+            .mobile-menu {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-out;
+            }
+            .mobile-menu.open {
+                max-height: 400px;
+                transition: max-height 0.3s ease-in;
+            }
         }
         
-        /* Additional fixes for very small screens (375px and below) */
+        /* Additional fixes for very small screens */
         @media (max-width: 480px) {
             h1 {
                 font-size: 2rem !important;
@@ -299,6 +303,8 @@
 <header class="fixed top-0 w-full z-50 bg-[#0A0A0A]/80 backdrop-blur-md border-b border-white/10" data-aos="fade-down" data-aos-duration="600" data-aos-once="false" data-aos-loop="true" data-aos-anchor-placement="top-bottom">
 <div class="flex justify-between items-center px-8 py-4 max-w-[1280px] mx-auto">
 <div class="text-2xl font-black tracking-tighter text-white">Portofolio</div>
+
+<!-- Desktop Navigation -->
 <nav class="hidden md:flex gap-8">
 <a class="font-sans uppercase tracking-widest text-sm text-white font-bold border-b-2 border-primary-fixed pb-1" href="#">Home</a>
 <a class="font-sans uppercase tracking-widest text-sm text-gray-400 hover:text-white transition-colors" href="about.html">About</a>
@@ -307,11 +313,34 @@
 <a class="font-sans uppercase tracking-widest text-sm text-gray-400 hover:text-white transition-colors" href="abilities.html">Abilities</a>
 <a class="font-sans uppercase tracking-widest text-sm text-gray-400 hover:text-white transition-colors" href="contact.html">Contact</a>
 </nav>
-<button class="bg-primary-fixed text-on-primary px-6 py-2 font-label-caps text-label-caps uppercase hover:scale-105 active:scale-95 transition-all">
+
+<!-- Mobile Menu Button & Hire Me Button Container -->
+<div class="flex items-center gap-3">
+<button class="bg-primary-fixed text-on-primary px-6 py-2 font-label-caps text-label-caps uppercase hover:scale-105 active:scale-95 transition-all hidden sm:inline-block">
+                Hire Me
+            </button>
+<button id="menuBtn" class="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</div>
+
+<!-- Mobile Menu Panel -->
+<div id="mobileMenu" class="mobile-menu md:hidden bg-[#0A0A0A]/95 backdrop-blur-md border-t border-white/10">
+<div class="flex flex-col px-6 py-4 gap-4">
+<a class="font-sans uppercase tracking-widest text-sm text-white font-bold border-l-4 border-primary-fixed pl-3 py-2" href="#">Home</a>
+<a class="font-sans uppercase tracking-widest text-sm text-gray-400 hover:text-white transition-colors pl-3 py-2" href="about.html">About</a>
+<a class="font-sans uppercase tracking-widest text-sm text-gray-400 hover:text-white transition-colors pl-3 py-2" href="education.html">Education</a>
+<a class="font-sans uppercase tracking-widest text-sm text-gray-400 hover:text-white transition-colors pl-3 py-2" href="project.html">Projects</a>
+<a class="font-sans uppercase tracking-widest text-sm text-gray-400 hover:text-white transition-colors pl-3 py-2" href="abilities.html">Abilities</a>
+<a class="font-sans uppercase tracking-widest text-sm text-gray-400 hover:text-white transition-colors pl-3 py-2" href="contact.html">Contact</a>
+<button class="bg-primary-fixed text-on-primary px-6 py-3 font-label-caps text-label-caps uppercase w-full mt-2 hover:scale-105 active:scale-95 transition-all">
                 Hire Me
             </button>
 </div>
+</div>
 </header>
+
 <main class="pt-24 kinetic-bg overflow-x-hidden">
 <!-- Hero Section -->
 <section class="max-w-[1280px] mx-auto px-8 py-[120px] grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
@@ -340,7 +369,7 @@
 <div class="lg:col-span-5 relative mt-12 lg:mt-0" data-aos="fade-left" data-aos-duration="800" data-aos-once="false" data-aos-loop="true" data-aos-delay="100">
 <div class="absolute -top-10 -left-10 w-64 h-64 bg-primary-fixed/10 rounded-full blur-3xl"></div>
 <div class="relative z-10 border border-white/10 p-4 bg-surface-container-low">
-<img alt="Rehan - Network Engineer &amp; Frontend Developer" class="w-full grayscale hover:grayscale-0 transition-all duration-700 aspect-[4/5] object-cover" data-alt="Professional studio portrait of a confident man in a dark turtleneck, dramatic side lighting, high contrast, editorial style, dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPHY8Jtdurl_LDddiUK3QUGKa5F1qPAkDWW7XWtQGMhNGyYAtxBQalo6qnAJvkonWS64wAmS2B5FtS73BKGK2D4fu1rbehFQu3qjI2-TAklhGTzb-Rooy3t-ke6L4audihJKelOuAITex5WTVLOYSflKtcZ1tZiavUg_1nVyTEu7pacGQpLToKQhnKMK0gKBxr_ddDcsFSdnmE5Em513buUvBYzZNhbKykvsjzG7DxUPX5gQkcUTId-qFjFEg36kZXBL9SHmOMG74"/>
+<img alt="Rehan - Network Engineer &amp; Frontend Developer" class="w-full grayscale hover:grayscale-0 transition-all duration-700 aspect-[4/5] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPHY8Jtdurl_LDddiUK3QUGKa5F1qPAkDWW7XWtQGMhNGyYAtxBQalo6qnAJvkonWS64wAmS2B5FtS73BKGK2D4fu1rbehFQu3qjI2-TAklhGTzb-Rooy3t-ke6L4audihJKelOuAITex5WTVLOYSflKtcZ1tZiavUg_1nVyTEu7pacGQpLToKQhnKMK0gKBxr_ddDcsFSdnmE5Em513buUvBYzZNhbKykvsjzG7DxUPX5gQkcUTId-qFjFEg36kZXBL9SHmOMG74"/>
 <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-primary-fixed/20 grid grid-cols-4 grid-rows-4 gap-2 p-4">
 <div class="bg-primary-fixed"></div>
 <div class="bg-primary-fixed/40"></div>
@@ -489,6 +518,22 @@
             }
         `;
         document.head.appendChild(style);
+        
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('open');
+                const iconSpan = menuBtn.querySelector('.material-symbols-outlined');
+                if (mobileMenu.classList.contains('open')) {
+                    iconSpan.textContent = 'close';
+                } else {
+                    iconSpan.textContent = 'menu';
+                }
+            });
+        }
     
     (function() {
     function disableInspect() {
