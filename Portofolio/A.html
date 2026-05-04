@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html class="scroll-smooth light" lang="en">
+<head>
+<!-- ==================== META & TITLE ==================== -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Alexandre | Network Infrastructure Professional</title>
+
+<!-- ==================== TAILWIND CSS ==================== -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries">
+</script>
+
+<!-- ==================== GOOGLE FONTS ==================== -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+<!-- ==================== AOS ANIMATION CSS ==================== -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+
+<!-- ==================== TAILWIND CONFIG ==================== -->
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                "colors": {
+                    "on-secondary-container": "#586377",
+                    "surface-container-highest": "#d3e4fe",
+                    "tertiary-fixed-dim": "#c4c7c9",
+                    "surface-container-high": "#dce9ff",
+                    "on-primary-fixed": "#001e2d",
+                    "inverse-on-surface": "#eaf1ff",
+                    "surface": "#f8f9ff",
+                    "surface-container": "#e5eeff",
+                    "on-error": "#ffffff",
+                    "on-surface": "#0b1c30",
+                    "inverse-surface": "#213145",
+                    "error": "#ba1a1a",
+                    "primary-fixed-dim": "#80d0ff",
+                    "on-secondary-fixed-variant": "#3c475a",
+                    "tertiary-container": "#a2a5a7",
+                    "outline-variant": "#bdc8d1",
+                    "on-primary-fixed-variant": "#004c6a",
+                    "surface-bright": "#f8f9ff",
+                    "surface-dim": "#cbdbf5",
+                    "secondary-container": "#d5e0f8",
+                    "on-tertiary-fixed-variant": "#444749",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed-dim": "#bcc7de",
+                    "primary": "#00658c",
+                    "on-surface-variant": "#3e4850",
+                    "inverse-primary": "#80d0ff",
+                    "on-primary-container": "#003f59",
+                    "primary-container": "#00b0f0",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed": "#d8e3fb",
+                    "primary-fixed": "#c5e7ff",
+                    "on-tertiary-container": "#383b3d",
+                    "surface-container-low": "#eff4ff",
+                    "on-background": "#0b1c30",
+                    "on-tertiary": "#ffffff",
+                    "background": "#f8f9ff",
+                    "on-error-container": "#93000a",
+                    "surface-variant": "#d3e4fe",
+                    "surface-tint": "#00658c",
+                    "outline": "#6e7881",
+                    "on-secondary-fixed": "#111c2d",
+                    "surface-container-lowest": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed": "#191c1e",
+                    "secondary": "#545f73",
+                    "tertiary": "#5c5f61",
+                    "tertiary-fixed": "#e0e3e5"
+                },
+                "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+                },
+                "spacing": {
+                    "container-max": "1200px",
+                    "gutter": "24px",
+                    "stack-lg": "48px",
+                    "margin": "32px",
+                    "stack-sm": "8px",
+                    "stack-md": "16px"
+                },
+                "fontFamily": {
+                    "body-md": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "display-lg": ["Inter"]
+                },
+                "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-caps": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                }
+            },
+        },
+    }
+</script>
+
+<!-- ==================== CUSTOM STYLES ==================== -->
+<style>
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-panel {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+    }
+    .timeline-line::before {
+        content: '';
+        position: absolute;
+        left: 20px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(to bottom, #00b0f0, #d3e4fe);
+    }
+    html {
+        scroll-behavior: smooth;
+    }
+    ::selection {
+        background-color: #00b0f0;
+        color: #003f59;
+    }
+    .protected-img {
+        pointer-events: none;
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        position: relative;
+    }
+    .img-protector {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        background: transparent;
+    }
+    .project-slide {
+        transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    }
+</style>
+</head>
+
+<!-- ==================== BODY ==================== -->
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+
+<!-- ==================== NAVBAR ==================== -->
+<nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
+    <div class="max-w-[1200px] mx-auto px-4 md:px-8 flex justify-between items-center h-20">
+        <div class="flex items-center text-2xl font-black tracking-tighter">
+            <span class="material-symbols-outlined text-primary-container mr-1">hub</span>
+            <span class="text-slate-900">Porto</span><span class="text-primary-container">folio</span>
+        </div>
+        <div class="hidden md:flex items-center gap-8">
+            <a class="text-sky-500 font-bold border-b-2 border-sky-500 pb-1 transition-all duration-300" href="#home">Home</a>
+            <a class="text-slate-600 font-medium hover:text-sky-500 transition-all duration-300" href="#about">About</a>
+            <a class="text-slate-600 font-medium hover:text-sky-500 transition-all duration-300" href="#education">Education</a>
+            <a class="text-slate-600 font-medium hover:text-sky-500 transition-all duration-300" href="#projects">Projects</a>
+            <a class="text-slate-600 font-medium hover:text-sky-500 transition-all duration-300" href="#skills">Skills</a>
+            <a class="bg-primary-container text-white px-6 py-2.5 rounded-full font-bold text-sm tracking-wide active:scale-95 transition-transform hover:bg-primary shadow-md" href="#contact">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ==================== MAIN CONTENT ==================== -->
+<main class="pt-20">
+
+<!-- ==================== SECTION: HOME ==================== -->
+<section class="max-w-[1200px] mx-auto px-4 md:px-8 py-12 md:py-24 flex flex-col md:flex-row items-center gap-8 md:gap-16" id="home">
+    <div class="flex-1 space-y-6 md:space-y-8" data-aos="fade-right" data-aos-duration="800">
+        <div class="inline-flex items-center gap-2 bg-secondary-container px-3 py-1.5 md:px-4 md:py-2 rounded-full text-primary font-semibold text-xs md:text-sm">
+            <span class="material-symbols-outlined text-sm md:text-base">terminal</span>
+            <span class="tracking-widest uppercase">Infrastructure Expert</span>
+        </div>
+        <h1 class="text-display-lg font-display-lg text-on-surface leading-tight">
+            Hello I'm <span class="text-primary-container">Alexandre</span> A Network engineer
+        </h1>
+        <p class="text-body-lg font-body-lg text-on-secondary-container max-w-xl">
+            Seorang profesional jaringan yang selalu ingin mengikuti perkembangan teknologi digital terbaru dengan cara mempelajarinya.
+        </p>
+        <div class="flex flex-wrap gap-3 md:gap-4 pt-2 md:pt-4">
+            <a href="#projects" class="bg-primary-container text-on-primary font-bold px-6 md:px-8 py-3 md:py-4 rounded-lg flex items-center gap-2 shadow-lg hover:brightness-110 active:scale-95 transition-all text-sm md:text-base">
+                View project
+                <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+            <a href="[Link Download CV]" download class="border-2 border-outline-variant text-on-surface-variant font-bold px-6 md:px-8 py-3 md:py-4 rounded-lg hover:bg-surface-container transition-all active:scale-95 text-sm md:text-base inline-flex items-center gap-2">
+                <span class="material-symbols-outlined">download</span>
+                Download CV
+            </a>
+        </div>
+        <div class="flex items-center gap-4 md:gap-6 pt-6 md:pt-8 border-t border-slate-100">
+            <div class="flex -space-x-4">
+                <div class="w-10 h-10 md:w-12 md:h-12 rounded-full border-4 border-white bg-slate-200 overflow-hidden">
+                    <span class="material-symbols-outlined flex items-center justify-center h-full text-slate-400 text-lg">person</span>
+                </div>
+                <div class="w-10 h-10 md:w-12 md:h-12 rounded-full border-4 border-white bg-primary-fixed-dim overflow-hidden flex items-center justify-center">
+                    <span class="material-symbols-outlined text-on-primary-container">router</span>
+                </div>
+            </div>
+            <p class="text-xs md:text-sm text-on-surface-variant italic">Trusted by local infrastructure providers and tech enthusiasts.</p>
+        </div>
+    </div>
+    <div class="flex-1 relative w-full" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+        <div class="absolute -top-10 -left-10 w-20 h-20 md:w-24 md:h-24 bg-surface-container-highest rounded-full blur-3xl opacity-60"></div>
+        <div class="absolute -bottom-10 -right-10 w-32 h-32 md:w-40 md:h-40 bg-primary-container/20 rounded-full blur-3xl opacity-40"></div>
+        <div class="relative z-10 rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border-4 md:border-8 border-white">
+            <div class="relative protected-img">
+                <div class="img-protector"></div>
+                <img alt="Network Engineer" class="w-full h-[300px] md:h-[500px] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaA0jPSD9_KxG8BHb9Ky6Chl4OTsqABb7peLnGXfPIo_b1zuAuhAVht__DahxjWgUs_RtUyRsn1XqKoQFbiEa7czLbj0JjNz978GuDmZxY2lRLe-Q2QyAHo1KNrOCLYlwODLCCRlEJfuROSSrOSfPA3yvCtFMB3XYbdo2enfEYT-P7BXbMnlEy24akjUghgheovbVkAd2EMd4NRRtUAjjN8PkjmhqXbqFlhJVy1TI0ttyW4sdB_KTA_skmBwtBC92Bl2XvzM0NzT4"/>
+            </div>
+            <div class="absolute bottom-4 md:bottom-6 left-4 md:left-6 right-4 md:right-6 p-3 md:p-4 bg-white/80 backdrop-blur-md rounded-xl flex items-center gap-3 md:gap-4 border border-white/50">
+                <div class="bg-primary-container p-2 md:p-3 rounded-lg text-white">
+                    <span class="material-symbols-outlined text-sm md:text-base">settings_ethernet</span>
+                </div>
+                <div>
+                    <p class="font-bold text-on-surface text-xs md:text-base">Configuring Network Systems</p>
+                    <p class="text-[10px] md:text-xs text-on-surface-variant uppercase tracking-widest font-semibold">Current Activity</p>
+                </div>
+            </div>
+        </div>
+        <div class="absolute -right-2 md:-right-4 top-1/4 p-3 md:p-4 bg-white shadow-lg rounded-xl z-20">
+            <span class="material-symbols-outlined text-primary-container text-lg md:text-xl">hub</span>
+        </div>
+        <div class="absolute -left-4 md:-left-6 bottom-1/4 p-3 md:p-4 bg-white shadow-lg rounded-xl z-20">
+            <span class="material-symbols-outlined text-primary text-lg md:text-xl">security</span>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SECTION: STATS BAR ==================== -->
+<section class="max-w-[1200px] mx-auto px-4 md:px-8 py-8 md:py-12" data-aos="fade-up" data-aos-duration="800">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 bg-surface-container-low p-6 md:p-8 rounded-3xl border border-white">
+        <div class="text-center space-y-2">
+            <div class="flex justify-center mb-2">
+                <span class="material-symbols-outlined text-primary-container">school</span>
+            </div>
+            <div class="text-headline-md font-headline-md text-on-surface">17</div>
+            <div class="text-label-caps font-label-caps text-on-secondary-container">Belajar jaringan</div>
+        </div>
+        <div class="text-center space-y-2">
+            <div class="flex justify-center mb-2">
+                <span class="material-symbols-outlined text-primary-container">checklist</span>
+            </div>
+            <div class="text-headline-md font-headline-md text-on-surface">250</div>
+            <div class="text-label-caps font-label-caps text-on-secondary-container">Project selesai</div>
+        </div>
+        <div class="text-center space-y-2">
+            <div class="flex justify-center mb-2">
+                <span class="material-symbols-outlined text-primary-container">work_history</span>
+            </div>
+            <div class="text-headline-md font-headline-md text-on-surface">15</div>
+            <div class="text-label-caps font-label-caps text-on-secondary-container">PKL/Magang</div>
+        </div>
+        <div class="text-center space-y-2">
+            <div class="flex justify-center mb-2">
+                <span class="material-symbols-outlined text-primary-container">sentiment_satisfied</span>
+            </div>
+            <div class="text-headline-md font-headline-md text-on-surface">198</div>
+            <div class="text-label-caps font-label-caps text-on-secondary-container">Klien puas</div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SECTION: TECHNICAL ARSENAL ==================== -->
+<section class="max-w-[1200px] mx-auto px-4 md:px-8 py-12 md:py-24" data-aos="fade-up" data-aos-duration="800">
+    <div class="mb-8 md:mb-12">
+        <h2 class="text-headline-md font-headline-md text-on-surface">Technical Arsenal</h2>
+        <div class="w-16 h-1 md:w-20 md:h-1.5 bg-primary-container mt-4 rounded-full"></div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div class="p-6 md:p-8 bg-white rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-slate-100 hover:border-primary-container transition-all">
+            <span class="material-symbols-outlined text-primary-container text-3xl md:text-4xl mb-4">router</span>
+            <h3 class="text-headline-sm font-headline-sm mb-2">Routing & Switching</h3>
+            <p class="text-on-secondary-container text-sm md:text-base">Designing high-availability LAN/WAN infrastructures using enterprise-grade hardware.</p>
+        </div>
+        <div class="p-6 md:p-8 bg-white rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-slate-100 hover:border-primary-container transition-all">
+            <span class="material-symbols-outlined text-primary-container text-3xl md:text-4xl mb-4">lan</span>
+            <h3 class="text-headline-sm font-headline-sm mb-2">VLAN Segmentation</h3>
+            <p class="text-on-secondary-container text-sm md:text-base">Implementing logical network isolation to improve security and broadcast efficiency.</p>
+        </div>
+        <div class="p-6 md:p-8 bg-white rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-slate-100 hover:border-primary-container transition-all">
+            <span class="material-symbols-outlined text-primary-container text-3xl md:text-4xl mb-4">monitoring</span>
+            <h3 class="text-headline-sm font-headline-sm mb-2">Traffic Analysis</h3>
+            <p class="text-on-secondary-container text-sm md:text-base">Utilizing monitoring tools to identify bottlenecks and optimize packet flow across nodes.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SECTION: ABOUT ==================== -->
+<section class="max-w-[1200px] mx-auto px-4 md:px-8 py-12 md:py-24" id="about">
+    <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div class="space-y-4 md:space-y-6" data-aos="fade-right" data-aos-duration="800">
+            <div class="inline-flex items-center gap-2 bg-secondary-container px-3 py-1.5 md:px-4 md:py-2 rounded-lg text-on-secondary-container font-semibold text-xs md:text-sm">
+                <span class="material-symbols-outlined text-base md:text-lg">verified</span>
+                <span>Network Infrastructure Professional</span>
+            </div>
+            <h2 class="text-display-lg font-display-lg text-on-surface">About me</h2>
+            <p class="text-headline-sm font-headline-sm text-primary">Network Infrastructure Professional</p>
+            <p class="text-body-lg font-body-lg text-on-surface-variant max-w-xl">
+                Saya memiliki latar belakang pendidikan di bidang Teknik Komputer Jaringan dan memiliki minat yang sangat kuat di bidang networking serta IT support. Berbekal pengalaman yang luas, saya berdedikasi untuk membangun infrastruktur jaringan yang handal dan efisien.
+            </p>
+            <div class="flex flex-wrap gap-3 md:gap-4 pt-2 md:pt-4">
+                <a href="#contact" class="bg-primary px-6 md:px-8 py-2.5 md:py-3 rounded-lg text-on-primary font-bold hover:shadow-lg transition-all active:scale-95 text-sm md:text-base">Contact me</a>
+            </div>
+        </div>
+        <div class="relative" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+            <div class="rounded-xl overflow-hidden shadow-2xl bg-slate-200 aspect-[4/3] relative protected-img">
+                <div class="img-protector"></div>
+                <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZ6R_X5MxDTM4tjmXptAigGC5pyTDTK1HdohT7hxWUVJZFRFQNEn7amEw56YMUPEkewnr3w9KFpMobTRA-tuQnDLBPvncNE5o8rVDrPkzXZDcqPo5feX9OSl_yzHOYomocUBT2BvB6ccJ32TWPnJ8_2XvEx1yhFraBxdBH37M2zVkcU5iYXfMQwZW9XR-NHaKet_Vk1DK7pro96TJa7w3vBfq5QMNUDebkHIMXFbofGLt7DoWuipTtSfgbD9pkzfhkE-Ep9H9yPYc"/>
+            </div>
+            <div class="absolute -bottom-4 -left-4 md:-bottom-6 md:-left-6 bg-primary-container p-4 md:p-6 rounded-xl shadow-xl text-on-primary">
+                <div class="text-2xl md:text-4xl font-black">7+</div>
+                <div class="text-[10px] md:text-sm font-bold uppercase tracking-wider">Experience</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Technical Competencies -->
+    <div class="mt-16 md:mt-24" data-aos="fade-up" data-aos-duration="800">
+        <h3 class="text-headline-md font-headline-md mb-8 md:mb-12 text-center">Technical Competencies</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+            <div class="md:col-span-2 bg-white p-6 md:p-8 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-slate-50 flex flex-col justify-between">
+                <div>
+                    <div class="bg-surface-container w-10 h-10 md:w-12 md:h-12 rounded-lg flex items-center justify-center mb-4 md:mb-6">
+                        <span class="material-symbols-outlined text-primary text-xl md:text-2xl">hub</span>
+                    </div>
+                    <h4 class="text-headline-sm font-headline-sm mb-3 md:mb-4">Network Architecture</h4>
+                    <p class="text-body-md font-body-md text-on-surface-variant mb-4 md:mb-6 text-sm md:text-base">
+                        Expertise in designing and implementing complex network topologies, focusing on scalability and reliability through modern protocols.
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-2 md:gap-3">
+                    <span class="bg-surface-container-high px-2.5 py-1 md:px-3 md:py-1 rounded text-xs md:text-sm font-semibold text-on-primary-container">VLAN Configuration</span>
+                    <span class="bg-surface-container-high px-2.5 py-1 md:px-3 md:py-1 rounded text-xs md:text-sm font-semibold text-on-primary-container">Load Balancing</span>
+                    <span class="bg-surface-container-high px-2.5 py-1 md:px-3 md:py-1 rounded text-xs md:text-sm font-semibold text-on-primary-container">UTP Cabling</span>
+                    <span class="bg-surface-container-high px-2.5 py-1 md:px-3 md:py-1 rounded text-xs md:text-sm font-semibold text-on-primary-container">Subnetting</span>
+                </div>
+            </div>
+            <div class="bg-slate-900 rounded-xl overflow-hidden relative group h-48 md:h-auto">
+                <div class="relative protected-img h-full">
+                    <div class="img-protector"></div>
+                    <img class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxEoj6PBK3xOqFQpTcwwBF7jrJDBpKsdWec86D67OKPnhrfBixChuI-VpM9rWOsh8O7Q529pTcOe1rybwpkg89CdmcP-eUVKrUzjAkUGoomDYTkhJJWHzLP3FaGS8hF6VK0BLpJo1JfRO2fafeiwKUq-rvzAPD_RYGxqAEABzFDRn0RjjG7Melc5IFpcFrAnnd1s4_96Ms0bzTtAb5Et9FY2VZ-UX279nEcLABpFLEocy4HIVOteuHKogGhcTgiouR7ZGmbJVouZk"/>
+                </div>
+                <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-end">
+                    <p class="text-white font-bold text-base md:text-lg">Modern Infrastructure Management</p>
+                    <p class="text-slate-300 text-xs md:text-sm">Hardware Monitoring & Maintenance</p>
+                </div>
+            </div>
+            <div class="bg-surface-container-low p-6 md:p-8 rounded-xl">
+                <h4 class="text-headline-sm font-headline-sm mb-4 md:mb-6 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary">construction</span>
+                    Tools
+                </h4>
+                <ul class="space-y-3 md:space-y-4">
+                    <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">router</span><span class="text-body-md font-body-md text-sm md:text-base">Cisco Systems</span></li>
+                    <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">dns</span><span class="text-body-md font-body-md text-sm md:text-base">MikroTik RouterOS</span></li>
+                    <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">settings_ethernet</span><span class="text-body-md font-body-md text-sm md:text-base">Ubiquiti UniFi</span></li>
+                    <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">terminal</span><span class="text-body-md font-body-md text-sm md:text-base">Network Monitoring</span></li>
+                </ul>
+            </div>
+            <div class="md:col-span-2 bg-white p-6 md:p-8 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-slate-50 flex flex-col sm:flex-row items-center gap-6 md:gap-8">
+                <div class="w-full sm:w-36 md:w-48 h-28 md:h-32 rounded-lg overflow-hidden shrink-0 relative protected-img">
+                    <div class="img-protector"></div>
+                    <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbZiNU0eN4MJPIDeDZexedKsNz3n3jE-Us0gwmIWNPl78u5EuWoDmNPLFTB14oF-BCsYThyW_Yo-_j0fcarYjJEkYGUJnjY2iphGYY62NnzMfbUFqJCqvC_jD4P-w5w8UfPhteM3mwR8XQClyt5_3DGK9UIstgGhOArPhJADOf9lprTWNCbHq5eV1UcNRM9VhQr5eSVcInNmT0UTI3aZuzPjuJU6LmS1V1eCz6aSCNd1jc_JevzKMpMatFGcDT14sYL9tvO2jO0DY"/>
+                </div>
+                <div>
+                    <h4 class="text-headline-sm font-headline-sm mb-2">Technical Philosophy</h4>
+                    <p class="text-body-md font-body-md text-on-surface-variant text-sm md:text-base">
+                        I believe that a strong network is the backbone of any digital ecosystem. My approach combines meticulous cable management with advanced virtual routing to ensure zero downtime and maximum throughput.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SECTION: STATS RIBBON ==================== -->
+<section class="bg-slate-50 border-y border-slate-200 py-10 md:py-16" data-aos="fade-up" data-aos-duration="800">
+    <div class="max-w-[1200px] mx-auto px-4 md:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center">
+            <div><div class="text-3xl md:text-4xl font-extrabold text-primary mb-1">3.542</div><div class="text-on-secondary-container font-label-caps uppercase text-[10px] md:text-xs">Projects Completed</div></div>
+            <div><div class="text-3xl md:text-4xl font-extrabold text-primary mb-1">875%</div><div class="text-on-secondary-container font-label-caps uppercase text-[10px] md:text-xs">Uptime Track Record</div></div>
+            <div><div class="text-3xl md:text-4xl font-extrabold text-primary mb-1">16</div><div class="text-on-secondary-container font-label-caps uppercase text-[10px] md:text-xs">Certifications</div></div>
+            <div><div class="text-3xl md:text-4xl font-extrabold text-primary mb-1">24/7</div><div class="text-on-secondary-container font-label-caps uppercase text-[10px] md:text-xs">Support Readiness</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SECTION: EDUCATION ==================== -->
+<section class="max-w-[1200px] mx-auto px-4 md:px-8 py-12 md:py-24" id="education">
+    <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12 mb-10 md:mb-16" data-aos="fade-up" data-aos-duration="800">
+        <div class="flex-1">
+            <span class="inline-block px-2.5 py-1 md:px-3 md:py-1 bg-secondary-container text-on-secondary-container rounded-lg text-label-caps text-xs md:text-sm mb-3 md:mb-4">ACADEMIC JOURNEY</span>
+            <h2 class="text-display-lg font-display-lg text-on-surface mb-4 md:mb-6">Education</h2>
+            <p class="text-body-lg font-body-lg text-on-surface-variant max-w-xl text-sm md:text-base">
+                Setiap tahap pendidikan adalah langkah menuju penguasaan arsitektur jaringan modern yang kompleks.
+            </p>
+        </div>
+        <div class="flex-1 w-full h-[200px] md:h-[300px] rounded-xl overflow-hidden relative shadow-lg">
+            <div class="relative protected-img h-full">
+                <div class="img-protector"></div>
+                <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1563770660941-20978e870e26?w=800&q=80"/>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+        </div>
+    </div>
+    
+    <div class="relative timeline-line pl-8 md:pl-12 space-y-8 md:space-y-12">
+        <!-- Education 1: SMK -->
+        <div class="relative group" data-aos="fade-right" data-aos-duration="800">
+            <div class="absolute -left-8 md:-left-12 top-0 w-8 h-8 md:w-10 md:h-10 bg-white border-2 border-primary rounded-full flex items-center justify-center z-10 shadow-sm transition-colors group-hover:bg-primary-container group-hover:border-primary-container">
+                <span class="material-symbols-outlined text-primary group-hover:text-white text-sm md:text-base">school</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start">
+                <div class="md:col-span-3 pt-1">
+                    <span class="text-primary font-bold text-lg md:text-headline-sm">[Tahun] - [Tahun]</span>
+                    <p class="text-label-caps text-on-surface-variant mt-1 uppercase tracking-widest text-[10px] md:text-xs">Vocational High School</p>
+                </div>
+                <div class="md:col-span-9">
+                    <div class="bg-white p-4 md:p-6 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-slate-100 flex flex-col md:flex-row gap-4 md:gap-6">
+                        <div class="w-full md:w-40 lg:w-48 h-28 md:h-32 rounded-lg overflow-hidden shrink-0 relative protected-img">
+                            <div class="img-protector"></div>
+                            <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=80"/>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-lg md:text-headline-sm font-headline-sm mb-2">[Nama SMK]</h3>
+                            <p class="text-on-surface-variant text-body-md mb-4 text-sm md:text-base">Focusing on Network Engineering and Telecommunications Infrastructure. Developing advanced skills in Cisco routing, network security protocols, and server management.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 md:px-3 md:py-1 bg-surface-container-low text-primary rounded-full text-xs md:text-sm font-medium">Network Architecture</span>
+                                <span class="px-2.5 py-1 md:px-3 md:py-1 bg-surface-container-low text-primary rounded-full text-xs md:text-sm font-medium">CCNA Prep</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Education 2: SMP -->
+        <div class="relative group" data-aos="fade-right" data-aos-duration="800" data-aos-delay="100">
+            <div class="absolute -left-8 md:-left-12 top-0 w-8 h-8 md:w-10 md:h-10 bg-white border-2 border-primary rounded-full flex items-center justify-center z-10 shadow-sm transition-colors group-hover:bg-primary-container group-hover:border-primary-container">
+                <span class="material-symbols-outlined text-primary group-hover:text-white text-sm md:text-base">book</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start">
+                <div class="md:col-span-3 pt-1">
+                    <span class="text-primary font-bold text-lg md:text-headline-sm">[Tahun] - [Tahun]</span>
+                    <p class="text-label-caps text-on-surface-variant mt-1 uppercase tracking-widest text-[10px] md:text-xs">Junior High School</p>
+                </div>
+                <div class="md:col-span-9">
+                    <div class="bg-white p-4 md:p-6 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-slate-100 flex flex-col md:flex-row gap-4 md:gap-6">
+                        <div class="w-full md:w-40 lg:w-48 h-28 md:h-32 rounded-lg overflow-hidden shrink-0 relative protected-img">
+                            <div class="img-protector"></div>
+                            <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&q=80"/>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-lg md:text-headline-sm font-headline-sm mb-2">[Nama SMP]</h3>
+                            <p class="text-on-surface-variant text-body-md mb-4 text-sm md:text-base">Discovered a deep fascination for computing and hardware maintenance. Participated in local science and technology fairs, winning recognition for basic electronic projects.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 md:px-3 md:py-1 bg-surface-container-low text-primary rounded-full text-xs md:text-sm font-medium">Basic Electronics</span>
+                                <span class="px-2.5 py-1 md:px-3 md:py-1 bg-surface-container-low text-primary rounded-full text-xs md:text-sm font-medium">Logic Building</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Education 3: SD -->
+        <div class="relative group" data-aos="fade-right" data-aos-duration="800" data-aos-delay="200">
+            <div class="absolute -left-8 md:-left-12 top-0 w-8 h-8 md:w-10 md:h-10 bg-white border-2 border-primary rounded-full flex items-center justify-center z-10 shadow-sm transition-colors group-hover:bg-primary-container group-hover:border-primary-container">
+                <span class="material-symbols-outlined text-primary group-hover:text-white text-sm md:text-base">child_care</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start">
+                <div class="md:col-span-3 pt-1">
+                    <span class="text-primary font-bold text-lg md:text-headline-sm">[Tahun] - [Tahun]</span>
+                    <p class="text-label-caps text-on-surface-variant mt-1 uppercase tracking-widest text-[10px] md:text-xs">Elementary School</p>
+                </div>
+                <div class="md:col-span-9">
+                    <div class="bg-white p-4 md:p-6 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-slate-100 flex flex-col md:flex-row gap-4 md:gap-6">
+                        <div class="w-full md:w-40 lg:w-48 h-28 md:h-32 rounded-lg overflow-hidden shrink-0 relative protected-img">
+                            <div class="img-protector"></div>
+                            <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80"/>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-lg md:text-headline-sm font-headline-sm mb-2">[Nama SD]</h3>
+                            <p class="text-on-surface-variant text-body-md mb-4 text-sm md:text-base">The foundational years where curiosity took root. Developed a habit of dismantling toys to understand how things work—the early spark of an engineering mindset.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 md:px-3 md:py-1 bg-surface-container-low text-primary rounded-full text-xs md:text-sm font-medium">Foundational Math</span>
+                                <span class="px-2.5 py-1 md:px-3 md:py-1 bg-surface-container-low text-primary rounded-full text-xs md:text-sm font-medium">Critical Thinking</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mt-12 md:mt-20 bg-surface-container rounded-xl p-6 md:p-10 flex flex-wrap justify-around gap-6 md:gap-8 text-center border border-surface-container-highest" data-aos="zoom-in" data-aos-duration="800">
+        <div><span class="block text-3xl md:text-display-lg font-display-lg text-primary">[Tahun]+</span><span class="text-label-caps text-on-surface-variant text-[10px] md:text-xs">YEARS OF LEARNING</span></div>
+        <div><span class="block text-3xl md:text-display-lg font-display-lg text-primary">3</span><span class="text-label-caps text-on-surface-variant text-[10px] md:text-xs">INSTITUTIONS</span></div>
+        <div><span class="block text-3xl md:text-display-lg font-display-lg text-primary">[Jumlah]+</span><span class="text-label-caps text-on-surface-variant text-[10px] md:text-xs">TECHNICAL CERTS</span></div>
+    </div>
+</section>
+
+<!-- ==================== SECTION: PROJECTS ==================== -->
+<section class="max-w-[1200px] mx-auto px-4 md:px-8 py-12 md:py-24" id="projects">
+    <div class="mb-8 md:mb-16" data-aos="fade-up" data-aos-duration="800">
+        <h2 class="text-display-lg font-display-lg text-on-surface mb-2">My Project</h2>
+        <p class="text-headline-sm font-headline-sm text-primary">Featured Work</p>
+    </div>
+    
+    <div class="relative overflow-hidden" data-aos="fade-up" data-aos-duration="800">
+        <div class="relative group rounded-xl bg-surface-container-lowest shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-slate-100 h-[350px] md:h-[600px]" id="project-slider-container">
+            
+            <!-- Slide 1 -->
+            <div class="project-slide absolute inset-0" data-index="0">
+                <div class="absolute inset-0 w-full h-full">
+                    <div class="relative protected-img h-full">
+                        <div class="img-protector"></div>
+                        <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80"/>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-on-surface/90 via-on-surface/20 to-transparent"></div>
+                </div>
+                <a href="[Link Project 1]" target="_blank" rel="noopener" class="absolute top-4 right-4 z-30 bg-primary-container text-white px-4 py-2 rounded-lg font-bold text-sm hover:bg-primary transition-colors shadow-lg flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-sm">open_in_new</span>
+                    Visit
+                </a>
+                <div class="absolute inset-0 flex flex-col justify-end p-4 md:p-8">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-8">
+                        <div class="max-w-2xl">
+                            <div class="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
+                                <span class="px-2 py-0.5 md:px-3 md:py-1 bg-primary-container/20 text-primary-container font-label-caps text-label-caps border border-primary-container/30 rounded text-xs">[Tanggal]</span>
+                                <span class="w-8 md:w-12 h-[1px] bg-primary-container/50"></span>
+                                <span class="text-on-primary-fixed-variant font-label-caps text-label-caps uppercase tracking-widest text-[10px] md:text-xs">[Kategori]</span>
+                            </div>
+                            <h3 class="text-xl md:text-headline-md font-headline-md text-white mb-2 md:mb-3">[Judul Project 1]</h3>
+                            <p class="text-sm md:text-body-lg font-body-lg text-slate-300 line-clamp-3">[Deskripsi singkat project 1...]</p>
+                        </div>
+                        <div class="flex items-center gap-3 md:gap-4">
+                            <button class="w-10 h-10 md:w-14 md:h-14 rounded-full border border-white/20 glass-panel flex items-center justify-center text-white hover:bg-primary-container hover:border-primary-container transition-all" onclick="prevProject()">
+                                <span class="material-symbols-outlined text-sm md:text-base">arrow_back</span>
+                            </button>
+                            <button class="w-10 h-10 md:w-14 md:h-14 rounded-full border border-white/20 glass-panel flex items-center justify-center text-white hover:bg-primary-container hover:border-primary-container transition-all" onclick="nextProject()">
+                                <span class="material-symbols-outlined text-sm md:text-base">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="project-slide absolute inset-0 translate-x-full" data-index="1">
+                <div class="absolute inset-0 w-full h-full">
+                    <div class="relative protected-img h-full">
+                        <div class="img-protector"></div>
+                        <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1563770660941-20978e870e26?w=800&q=80"/>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-on-surface/90 via-on-surface/20 to-transparent"></div>
+                </div>
+                <a href="[Link Project 2]" target="_blank" rel="noopener" class="absolute top-4 right-4 z-30 bg-primary-container text-white px-4 py-2 rounded-lg font-bold text-sm hover:bg-primary transition-colors shadow-lg flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-sm">open_in_new</span>
+                    Visit
+                </a>
+                <div class="absolute inset-0 flex flex-col justify-end p-4 md:p-8">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-8">
+                        <div class="max-w-2xl">
+                            <div class="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
+                                <span class="px-2 py-0.5 md:px-3 md:py-1 bg-primary-container/20 text-primary-container font-label-caps text-label-caps border border-primary-container/30 rounded text-xs">[Tanggal]</span>
+                                <span class="w-8 md:w-12 h-[1px] bg-primary-container/50"></span>
+                                <span class="text-on-primary-fixed-variant font-label-caps text-label-caps uppercase tracking-widest text-[10px] md:text-xs">[Kategori]</span>
+                            </div>
+                            <h3 class="text-xl md:text-headline-md font-headline-md text-white mb-2 md:mb-3">[Judul Project 2]</h3>
+                            <p class="text-sm md:text-body-lg font-body-lg text-slate-300 line-clamp-3">[Deskripsi singkat project 2...]</p>
+                        </div>
+                        <div class="flex items-center gap-3 md:gap-4">
+                            <button class="w-10 h-10 md:w-14 md:h-14 rounded-full border border-white/20 glass-panel flex items-center justify-center text-white hover:bg-primary-container hover:border-primary-container transition-all" onclick="prevProject()"><span class="material-symbols-outlined text-sm md:text-base">arrow_back</span></button>
+                            <button class="w-10 h-10 md:w-14 md:h-14 rounded-full border border-white/20 glass-panel flex items-center justify-center text-white hover:bg-primary-container hover:border-primary-container transition-all" onclick="nextProject()"><span class="material-symbols-outlined text-sm md:text-base">arrow_forward</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="project-slide absolute inset-0 translate-x-full" data-index="2">
+                <div class="absolute inset-0 w-full h-full">
+                    <div class="relative protected-img h-full"><div class="img-protector"></div><img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1581092921461-39b9d317bcf2?w=800&q=80"/></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-on-surface/90 via-on-surface/20 to-transparent"></div>
+                </div>
+                <a href="[Link Project 3]" target="_blank" rel="noopener" class="absolute top-4 right-4 z-30 bg-primary-container text-white px-4 py-2 rounded-lg font-bold text-sm hover:bg-primary transition-colors shadow-lg flex items-center gap-1.5"><span class="material-symbols-outlined text-sm">open_in_new</span>Visit</a>
+                <div class="absolute inset-0 flex flex-col justify-end p-4 md:p-8">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-8">
+                        <div class="max-w-2xl">
+                            <div class="flex items-center gap-2 md:gap-3 mb-2 md:mb-3"><span class="px-2 py-0.5 md:px-3 md:py-1 bg-primary-container/20 text-primary-container font-label-caps text-label-caps border border-primary-container/30 rounded text-xs">[Tanggal]</span><span class="w-8 md:w-12 h-[1px] bg-primary-container/50"></span><span class="text-on-primary-fixed-variant font-label-caps text-label-caps uppercase tracking-widest text-[10px] md:text-xs">[Kategori]</span></div>
+                            <h3 class="text-xl md:text-headline-md font-headline-md text-white mb-2 md:mb-3">[Judul Project 3]</h3>
+                            <p class="text-sm md:text-body-lg font-body-lg text-slate-300 line-clamp-3">[Deskripsi singkat project 3...]</p>
+                        </div>
+                        <div class="flex items-center gap-3 md:gap-4">
+                            <button class="w-10 h-10 md:w-14 md:h-14 rounded-full border border-white/20 glass-panel flex items-center justify-center text-white hover:bg-primary-container hover:border-primary-container transition-all" onclick="prevProject()"><span class="material-symbols-outlined text-sm md:text-base">arrow_back</span></button>
+                            <button class="w-10 h-10 md:w-14 md:h-14 rounded-full border border-white/20 glass-panel flex items-center justify-center text-white hover:bg-primary-container hover:border-primary-container transition-all" onclick="nextProject()"><span class="material-symbols-outlined text-sm md:text-base">arrow_forward</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 4 -->
+            <div class="project-slide absolute inset-0 translate-x-full" data-index="3">
+                <div class="absolute inset-0 w-full h-full">
+                    <div class="relative protected-img h-full"><div class="img-protector"></div><img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1614624532983-4ce03382d63d?w=800&q=80"/></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-on-surface/90 via-on-surface/20 to-transparent"></div>
+                </div>
+                <a href="[Link Project 4]" target="_blank" rel="noopener" class="absolute top-4 right-4 z-30 bg-primary-container text-white px-4 py-2 rounded-lg font-bold text-sm hover:bg-primary transition-colors shadow-lg flex items-center gap-1.5"><span class="material-symbols-outlined text-sm">open_in_new</span>Visit</a>
+                <div class="absolute inset-0 flex flex-col justify-end p-4 md:p-8">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-8">
+                        <div class="max-w-2xl">
+                            <div class="flex items-center gap-2 md:gap-3 mb-2 md:mb-3"><span class="px-2 py-0.5 md:px-3 md:py-1 bg-primary-container/20 text-primary-container font-label-caps text-label-caps border border-primary-container/30 rounded text-xs">[Tanggal]</span><span class="w-8 md:w-12 h-[1px] bg-primary-container/50"></span><span class="text-on-primary-fixed-variant font-label-caps text-label-caps uppercase tracking-widest text-[10px] md:text-xs">[Kategori]</span></div>
+                            <h3 class="text-xl md:text-headline-md font-headline-md text-white mb-2 md:mb-3">[Judul Project 4]</h3>
+                            <p class="text-sm md:text-body-lg font-body-lg text-slate-300 line-clamp-3">[Deskripsi singkat project 4...]</p>
+                        </div>
+                        <div class="flex items-center gap-3 md:gap-4">
+                            <button class="w-10 h-10 md:w-14 md:h-14 rounded-full border border-white/20 glass-panel flex items-center justify-center text-white hover:bg-primary-container hover:border-primary-container transition-all" onclick="prevProject()"><span class="material-symbols-outlined text-sm md:text-base">arrow_back</span></button>
+                            <button class="w-10 h-10 md:w-14 md:h-14 rounded-full border border-white/20 glass-panel flex items-center justify-center text-white hover:bg-primary-container hover:border-primary-container transition-all" onclick="nextProject()"><span class="material-symbols-outlined text-sm md:text-base">arrow_forward</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 5 -->
+            <div class="project-slide absolute inset-0 translate-x-full" data-index="4">
+                <div class="absolute inset-0 w-full h-full">
+                    <div class="relative protected-img h-full"><div class="img-protector"></div><img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1523050854058-8df90910e9c2?w=800&q=80"/></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-on-surface/90 via-on-surface/20 to-transparent"></div>
+                </div>
+                <a href="[Link Project 5]" target="_blank" rel="noopener" class="absolute top-4 right-4 z-30 bg-primary-container text-white px-4 py-2 rounded-lg font-bold text-sm hover:bg-primary transition-colors shadow-lg flex items-center gap-1.5"><span class="material-symbols-outlined text-sm">open_in_new</span>Visit</a>
+                <div class="absolute inset-0 flex flex-col justify-end p-4 md:p-8">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-8">
+                        <div class="max-w-2xl">
+                            <div class="flex items-center gap-2 md:gap-3 mb-2 md:mb-3"><span class="px-2 py-0.5 md:px-3 md:py-1 bg-primary-container/20 text-primary-container font-label-caps text-label-caps border border-primary-container/30 rounded text-xs">[Tanggal]</span><span class="w-8 md:w-12 h-[1px] bg-primary-container/50"></span><span class="text-on-primary-fixed-variant font-label-caps text-label-caps uppercase tracking-widest text-[10px] md:text-xs">[Kategori]</span></div>
+                            <h3 class="text-xl md:text-headline-md font-headline-md text-white mb-2 md:mb-3">[Judul Project 5]</h3>
+                            <p class="text-sm md:text-body-lg font-body-lg text-slate-300 line-clamp-3">[Deskripsi singkat project 5...]</p>
+                        </div>
+                        <div class="flex items-center gap-3 md:gap-4">
+                            <button class="w-10 h-10 md:w-14 md:h-14 rounded-full border border-white/20 glass-panel flex items-center justify-center text-white hover:bg-primary-container hover:border-primary-container transition-all" onclick="prevProject()"><span class="material-symbols-outlined text-sm md:text-base">arrow_back</span></button>
+                            <button class="w-10 h-10 md:w-14 md:h-14 rounded-full border border-white/20 glass-panel flex items-center justify-center text-white hover:bg-primary-container hover:border-primary-container transition-all" onclick="nextProject()"><span class="material-symbols-outlined text-sm md:text-base">arrow_forward</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <!-- Bento Grid Secondary Projects -->
+    <div class="mt-6 md:mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6" data-aos="fade-up" data-aos-duration="800">
+        <div class="p-4 md:p-8 bg-white rounded-xl border border-slate-100 shadow-[0_10px_30px_rgba(0,0,0,0.05)] hover:border-primary-container/30 transition-all">
+            <span class="material-symbols-outlined text-primary mb-4 md:mb-6">hub</span>
+            <h4 class="text-headline-sm font-headline-sm mb-2">[Judul Mini Project 1]</h4>
+            <p class="text-on-surface-variant text-body-md text-sm md:text-base">[Deskripsi singkat...]</p>
+        </div>
+        <div class="p-4 md:p-8 bg-white rounded-xl border border-slate-100 shadow-[0_10px_30px_rgba(0,0,0,0.05)] hover:border-primary-container/30 transition-all">
+            <span class="material-symbols-outlined text-primary mb-4 md:mb-6">shield</span>
+            <h4 class="text-headline-sm font-headline-sm mb-2">[Judul Mini Project 2]</h4>
+            <p class="text-on-surface-variant text-body-md text-sm md:text-base">[Deskripsi singkat...]</p>
+        </div>
+        <div class="p-4 md:p-8 bg-white rounded-xl border border-slate-100 shadow-[0_10px_30px_rgba(0,0,0,0.05)] hover:border-primary-container/30 transition-all">
+            <span class="material-symbols-outlined text-primary mb-4 md:mb-6">monitoring</span>
+            <h4 class="text-headline-sm font-headline-sm mb-2">[Judul Mini Project 3]</h4>
+            <p class="text-on-surface-variant text-body-md text-sm md:text-base">[Deskripsi singkat...]</p>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SECTION: SKILLS ==================== -->
+<section class="max-w-[1200px] mx-auto px-4 md:px-8 py-12 md:py-24" id="skills">
+    <header class="mb-8 md:mb-16" data-aos="fade-up" data-aos-duration="800">
+        <h2 class="text-display-lg font-display-lg text-on-surface mb-4">My ability</h2>
+        <p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl text-sm md:text-base">
+            A technical overview of my professional competencies in network infrastructure, server management, and collaborative productivity.
+        </p>
+    </header>
+    
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
+        <div class="md:col-span-8 space-y-6 md:space-y-8" data-aos="fade-right" data-aos-duration="800">
+            <div class="glass-card p-6 md:p-8 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-white">
+                <div class="flex items-center gap-3 mb-6 md:mb-8">
+                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                        <span class="material-symbols-outlined text-xl md:text-2xl" style="font-variation-settings: 'FILL' 1;">settings_ethernet</span>
+                    </div>
+                    <h3 class="text-headline-md font-headline-md">Hard skill</h3>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+                    <div class="flex items-start gap-3 md:gap-4 p-3 md:p-4 rounded-lg hover:bg-white/50 transition-colors"><span class="material-symbols-outlined text-primary text-lg md:text-xl">description</span><div><p class="font-bold text-on-surface text-sm md:text-base">Microsoft Office</p><p class="text-xs md:text-sm text-on-surface-variant">Expertise in Word, Excel, and PowerPoint.</p></div></div>
+                    <div class="flex items-start gap-3 md:gap-4 p-3 md:p-4 rounded-lg hover:bg-white/50 transition-colors"><span class="material-symbols-outlined text-primary text-lg md:text-xl">terminal</span><div><p class="font-bold text-on-surface text-sm md:text-base">Winbox MikroTik</p><p class="text-xs md:text-sm text-on-surface-variant">Comprehensive router configuration via GUI/CLI.</p></div></div>
+                    <div class="flex items-start gap-3 md:gap-4 p-3 md:p-4 rounded-lg hover:bg-white/50 transition-colors"><span class="material-symbols-outlined text-primary text-lg md:text-xl">alt_route</span><div><p class="font-bold text-on-surface text-sm md:text-base">Load Balancing</p><p class="text-xs md:text-sm text-on-surface-variant">PCC and NTH methods for bandwidth optimization.</p></div></div>
+                    <div class="flex items-start gap-3 md:gap-4 p-3 md:p-4 rounded-lg hover:bg-white/50 transition-colors"><span class="material-symbols-outlined text-primary text-lg md:text-xl">security</span><div><p class="font-bold text-on-surface text-sm md:text-base">Proxy Server</p><p class="text-xs md:text-sm text-on-surface-variant">Traffic filtering and cache management.</p></div></div>
+                    <div class="flex items-start gap-3 md:gap-4 p-3 md:p-4 rounded-lg hover:bg-white/50 transition-colors"><span class="material-symbols-outlined text-primary text-lg md:text-xl">wifi</span><div><p class="font-bold text-on-surface text-sm md:text-base">Setting Wi-Fi</p><p class="text-xs md:text-sm text-on-surface-variant">Deployment and optimization of wireless APs.</p></div></div>
+                    <div class="flex items-start gap-3 md:gap-4 p-3 md:p-4 rounded-lg hover:bg-white/50 transition-colors"><span class="material-symbols-outlined text-primary text-lg md:text-xl">more_horiz</span><div><p class="font-bold text-on-surface text-sm md:text-base">Dan lain-lain</p><p class="text-xs md:text-sm text-on-surface-variant">Continuous learning in Linux & Cloud.</p></div></div>
+                </div>
+            </div>
+            <div class="bg-slate-100/50 p-6 md:p-8 rounded-xl border border-slate-200">
+                <p class="text-label-caps font-label-caps text-on-secondary-container mb-4 md:mb-6">TECHNOLOGY STACK & TOOLS</p>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 md:gap-6">
+                    <div class="bg-white p-4 md:p-6 rounded-lg shadow-sm flex flex-col items-center justify-center gap-2 md:gap-3 aspect-square border border-slate-100">
+                        <div class="relative protected-img"><div class="img-protector"></div><img alt="MikroTik" class="w-8 h-8 md:w-12 md:h-12 object-contain" src="https://upload.wikimedia.org/wikipedia/commons/3/36/MikroTik_logo.svg"/></div>
+                        <span class="font-bold text-[10px] md:text-xs">MikroTik</span>
+                    </div>
+                    <div class="bg-white p-4 md:p-6 rounded-lg shadow-sm flex flex-col items-center justify-center gap-2 md:gap-3 aspect-square border border-slate-100">
+                        <div class="relative protected-img"><div class="img-protector"></div><img alt="Cisco" class="w-8 h-8 md:w-12 md:h-12 object-contain" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg"/></div>
+                        <span class="font-bold text-[10px] md:text-xs">Cisco</span>
+                    </div>
+                    <div class="bg-white p-4 md:p-6 rounded-lg shadow-sm flex flex-col items-center justify-center gap-2 md:gap-3 aspect-square border border-slate-100">
+                        <div class="relative protected-img"><div class="img-protector"></div><img alt="Ubiquiti" class="w-8 h-8 md:w-12 md:h-12 object-contain" src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Ubiquiti_Networks_logo.svg"/></div>
+                        <span class="font-bold text-[10px] md:text-xs">Ubiquiti</span>
+                    </div>
+                    <div class="bg-white p-4 md:p-6 rounded-lg shadow-sm flex flex-col items-center justify-center gap-2 md:gap-3 aspect-square border border-slate-100">
+                        <span class="material-symbols-outlined text-primary text-2xl md:text-4xl">monitoring</span>
+                        <span class="font-bold text-[10px] md:text-xs">Monitoring</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="md:col-span-4 space-y-6 md:space-y-8" data-aos="fade-left" data-aos-duration="800">
+            <div class="bg-primary p-6 md:p-8 rounded-xl text-white shadow-xl">
+                <div class="flex items-center gap-3 mb-6 md:mb-8">
+                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-white/20 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-white text-xl md:text-2xl" style="font-variation-settings: 'FILL' 1;">psychology</span>
+                    </div>
+                    <h3 class="text-headline-sm font-headline-sm">Soft skill</h3>
+                </div>
+                <div class="space-y-4 md:space-y-6">
+                    <div class="flex items-center gap-3 md:gap-4 group"><div class="w-6 h-6 md:w-8 md:h-8 rounded-full border-2 border-white/30 flex items-center justify-center group-hover:bg-white/20 transition-colors"><span class="material-symbols-outlined text-sm">check</span></div><span class="text-body-md font-body-md font-semibold text-sm md:text-base">Independen</span></div>
+                    <div class="flex items-center gap-3 md:gap-4 group"><div class="w-6 h-6 md:w-8 md:h-8 rounded-full border-2 border-white/30 flex items-center justify-center group-hover:bg-white/20 transition-colors"><span class="material-symbols-outlined text-sm">groups</span></div><span class="text-body-md font-body-md font-semibold text-sm md:text-base">Team work</span></div>
+                    <div class="flex items-center gap-3 md:gap-4 group"><div class="w-6 h-6 md:w-8 md:h-8 rounded-full border-2 border-white/30 flex items-center justify-center group-hover:bg-white/20 transition-colors"><span class="material-symbols-outlined text-sm">schedule</span></div><span class="text-body-md font-body-md font-semibold text-sm md:text-base">Manage time</span></div>
+                </div>
+                <div class="mt-10 md:mt-12 pt-6 md:pt-8 border-t border-white/10"><p class="text-xs md:text-sm opacity-80 leading-relaxed italic">"Technical skills build the network, but professional soft skills sustain the infrastructure."</p></div>
+            </div>
+            <div class="glass-card p-6 md:p-8 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-white">
+                <h4 class="text-label-caps font-label-caps text-on-secondary-container mb-4 md:mb-6">NETWORK PROFICIENCY</h4>
+                <div class="space-y-4 md:space-y-6">
+                    <div><div class="flex justify-between mb-2"><span class="text-[10px] md:text-xs font-bold">Switching & Routing</span><span class="text-[10px] md:text-xs font-bold text-primary">[Persen]%</span></div><div class="h-1.5 md:h-2 bg-slate-100 rounded-full overflow-hidden"><div class="h-full bg-primary w-[95%]"></div></div></div>
+                    <div><div class="flex justify-between mb-2"><span class="text-[10px] md:text-xs font-bold">Security Protocols</span><span class="text-[10px] md:text-xs font-bold text-primary">[Persen]%</span></div><div class="h-1.5 md:h-2 bg-slate-100 rounded-full overflow-hidden"><div class="h-full bg-primary w-[80%]"></div></div></div>
+                    <div><div class="flex justify-between mb-2"><span class="text-[10px] md:text-xs font-bold">Documentation</span><span class="text-[10px] md:text-xs font-bold text-primary">[Persen]%</span></div><div class="h-1.5 md:h-2 bg-slate-100 rounded-full overflow-hidden"><div class="h-full bg-primary w-[85%]"></div></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SECTION: CONTACT ==================== -->
+<section class="max-w-[1200px] mx-auto px-4 md:px-8 py-12 md:py-24" id="contact">
+    <div class="mb-8 md:mb-16" data-aos="fade-up" data-aos-duration="800">
+        <span class="text-primary font-label-caps uppercase tracking-widest mb-4 block text-xs md:text-sm">Communication Portal</span>
+        <h2 class="text-display-lg font-display-lg text-on-surface mb-4 md:mb-6">Get in Touch</h2>
+        <p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl text-sm md:text-base">Whether you're looking to discuss network architecture, explore collaboration opportunities, or simply want to say hello, I'm always open to professional dialogue.</p>
+    </div>
+    
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8">
+        <div class="lg:col-span-7 bg-surface-container-lowest rounded-xl p-6 md:p-8 shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-slate-100" data-aos="fade-right" data-aos-duration="800">
+            <form class="space-y-4 md:space-y-6" id="contact-form">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                    <div class="space-y-2"><label class="text-xs md:text-sm font-semibold text-slate-700 ml-1">Name</label><input class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-3 py-2.5 md:px-4 md:py-3 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder:text-slate-400 text-sm md:text-base" id="name" placeholder="John Doe" type="text"/></div>
+                    <div class="space-y-2"><label class="text-xs md:text-sm font-semibold text-slate-700 ml-1">Email</label><input class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-3 py-2.5 md:px-4 md:py-3 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder:text-slate-400 text-sm md:text-base" id="email" placeholder="john@example.com" type="email"/></div>
+                </div>
+                <div class="space-y-2"><label class="text-xs md:text-sm font-semibold text-slate-700 ml-1">Message</label><textarea class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-3 py-2.5 md:px-4 md:py-3 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder:text-slate-400 resize-none text-sm md:text-base" id="message" placeholder="How can I help you today?" rows="5"></textarea></div>
+                <button class="w-full bg-primary-container text-white py-3 md:py-4 rounded-lg font-bold text-base md:text-lg hover:bg-primary transition-colors shadow-lg active:scale-[0.98]" type="submit">Send Message</button>
+            </form>
+        </div>
+        
+        <div class="lg:col-span-5 space-y-4 md:space-y-8" data-aos="fade-left" data-aos-duration="800">
+            <div class="grid grid-cols-1 gap-3 md:gap-4">
+                <div class="flex items-center gap-4 md:gap-6 p-4 md:p-6 bg-surface-container-lowest rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow"><div class="w-10 h-10 md:w-14 md:h-14 rounded-full bg-secondary-container flex items-center justify-center text-primary shrink-0"><span class="material-symbols-outlined text-lg md:text-xl">mail</span></div><div><p class="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-tighter">Email</p><p class="text-base md:text-headline-sm font-headline-sm text-on-surface">[Email Kamu]</p></div></div>
+                <div class="flex items-center gap-4 md:gap-6 p-4 md:p-6 bg-surface-container-lowest rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow"><div class="w-10 h-10 md:w-14 md:h-14 rounded-full bg-secondary-container flex items-center justify-center text-primary shrink-0"><span class="material-symbols-outlined text-lg md:text-xl">call</span></div><div><p class="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-tighter">Phone</p><p class="text-base md:text-headline-sm font-headline-sm text-on-surface">[Nomor Telepon]</p></div></div>
+                <div class="flex items-center gap-4 md:gap-6 p-4 md:p-6 bg-surface-container-lowest rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow"><div class="w-10 h-10 md:w-14 md:h-14 rounded-full bg-secondary-container flex items-center justify-center text-primary shrink-0"><span class="material-symbols-outlined text-lg md:text-xl">location_on</span></div><div><p class="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-tighter">Location</p><p class="text-base md:text-headline-sm font-headline-sm text-on-surface">[Kota, Negara]</p></div></div>
+            </div>
+            
+            <div class="relative h-[200px] md:h-[280px] rounded-xl overflow-hidden shadow-lg group">
+                <div class="relative protected-img h-full"><div class="img-protector"></div><img alt="Workspace" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80"/></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent flex flex-col justify-end p-4 md:p-6">
+                    <div class="flex justify-between items-end">
+                        <div><h3 class="text-white text-base md:text-headline-sm font-headline-sm">Global Connectivity</h3><p class="text-slate-200 text-xs md:text-sm">Deploying robust infrastructure worldwide.</p></div>
+                        <div class="bg-white/20 backdrop-blur-md p-2 rounded-lg"><span class="material-symbols-outlined text-white text-2xl md:text-3xl">public</span></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex gap-3 md:gap-4">
+                <a class="flex-1 flex items-center justify-center gap-2 md:gap-3 bg-slate-900 text-white py-3 md:py-4 rounded-xl font-bold hover:bg-black transition-colors text-xs md:text-sm" href="[Link LinkedIn]"><span class="material-symbols-outlined text-sm md:text-base">share</span>LinkedIn</a>
+                <a class="flex-1 flex items-center justify-center gap-2 md:gap-3 border-2 border-slate-200 text-slate-900 py-3 md:py-4 rounded-xl font-bold hover:bg-slate-50 transition-colors text-xs md:text-sm" href="[Link Website]"><span class="material-symbols-outlined text-sm md:text-base">public</span>Vintacts</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="w-full py-8 md:py-12 mt-12 md:mt-20 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-[1200px] mx-auto px-4 md:px-8 text-center">
+        <p class="text-xs md:text-sm font-medium text-slate-500">© 2026 Alexandre Vettel. All rights reserved. Network Infrastructure Professional.</p>
+    </div>
+</footer>
+
+<!-- ==================== FAB SCROLL BOTTOM (Desktop Only) ==================== -->
+<div class="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-40 hidden md:block" id="scroll-fab-container">
+    <button class="w-12 h-12 md:w-14 md:h-14 bg-primary-container text-white rounded-full shadow-lg flex items-center justify-center active:scale-95 transition-all group" id="scroll-bottom-btn" onclick="scrollToBottom()">
+        <span class="material-symbols-outlined text-lg md:text-xl">mouse</span>
+    </button>
+    <span class="absolute right-14 md:right-16 top-1/2 -translate-y-1/2 bg-on-surface text-white px-3 py-1.5 md:px-4 md:py-2 rounded-lg text-xs md:text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">Scroll ke Bawah</span>
+</div>
+
+<!-- ==================== AOS ANIMATION JS ==================== -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+</script>
+
+<!-- ==================== INIT SCRIPTS ==================== -->
+<script>
+    AOS.init({
+        duration: 800,
+        once: false,
+        mirror: true,
+        offset: 100,
+        easing: 'ease-in-out',
+    });
+    
+    // PROJECT SLIDER
+    var currentProject = 0;
+    var totalProjects = 5;
+    function updateProjectSlides() {
+        var slides = document.querySelectorAll('.project-slide');
+        slides.forEach(function(slide, index) {
+            slide.classList.remove('translate-x-0', 'translate-x-full', '-translate-x-full', 'opacity-100', 'opacity-0');
+            slide.style.pointerEvents = 'none';
+            if (index === currentProject) {
+                slide.classList.add('translate-x-0', 'opacity-100');
+                slide.style.pointerEvents = 'auto';
+            } else if (index < currentProject) {
+                slide.classList.add('-translate-x-full', 'opacity-0');
+            } else {
+                slide.classList.add('translate-x-full', 'opacity-0');
+            }
+        });
+    }
+    function nextProject() { currentProject = (currentProject + 1) % totalProjects; updateProjectSlides(); }
+    function prevProject() { currentProject = (currentProject - 1 + totalProjects) % totalProjects; updateProjectSlides(); }
+    updateProjectSlides();
+    
+    // SCROLL TO BOTTOM
+    var isScrolling = false;
+    var scrollInterval;
+    function scrollToBottom() {
+        if (isScrolling) { isScrolling = false; clearInterval(scrollInterval); return; }
+        isScrolling = true;
+        var scrollHeight = document.body.scrollHeight;
+        var speed = 3;
+        scrollInterval = setInterval(function() {
+            var currentPosition = window.scrollY;
+            var maxScroll = scrollHeight - window.innerHeight;
+            if (currentPosition >= maxScroll || !isScrolling) { clearInterval(scrollInterval); isScrolling = false; return; }
+            window.scrollBy(0, speed);
+        }, 16);
+    }
+    
+    // CONTACT FORM → WHATSAPP
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var message = document.getElementById('message').value;
+        var whatsappText = "Halo Alexandre Vettel, saya " + name + " (" + email + ") ingin menyampaikan: " + message;
+        var whatsappURL = "https://wa.me/[Nomor WhatsApp]?text=" + encodeURIComponent(whatsappText);
+        window.open(whatsappURL, '_blank');
+    });
+    
+    // KEAMANAN
+    document.addEventListener('keydown', function(e) {
+        if (e.ctrlKey && e.key === 'u') { e.preventDefault(); return false; }
+        if (e.ctrlKey && e.shiftKey && e.key === 'I') { e.preventDefault(); return false; }
+        if (e.ctrlKey && e.shiftKey && e.key === 'J') { e.preventDefault(); return false; }
+        if (e.ctrlKey && e.shiftKey && e.key === 'C') { e.preventDefault(); return false; }
+        if (e.key === 'F12') { e.preventDefault(); return false; }
+    });
+    document.addEventListener('contextmenu', function(e) { if (e.target.tagName === 'IMG') { e.preventDefault(); return false; } });
+    document.querySelectorAll('img').forEach(function(img) { img.addEventListener('dragstart', function(e) { e.preventDefault(); return false; }); });
+    
+    // NAV ACTIVE
+    var sections = document.querySelectorAll('section[id]');
+    var navLinks = document.querySelectorAll('nav a[href^="#"]');
+    window.addEventListener('scroll', function() {
+        var current = '';
+        sections.forEach(function(section) { var sectionTop = section.offsetTop - 120; if (window.scrollY >= sectionTop) { current = section.getAttribute('id'); } });
+        navLinks.forEach(function(link) {
+            link.classList.remove('text-sky-500', 'font-bold', 'border-b-2', 'border-sky-500', 'pb-1');
+            link.classList.add('text-slate-600', 'font-medium');
+            if (link.getAttribute('href') === '#' + current) { link.classList.remove('text-slate-600', 'font-medium'); link.classList.add('text-sky-500', 'font-bold', 'border-b-2', 'border-sky-500', 'pb-1'); }
+        });
+    });
+</script>
+
+</body>
+</html>
